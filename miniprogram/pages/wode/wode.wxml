@@ -1,0 +1,44 @@
+<view>
+    <!--未登录-->
+	<view class="bg" wx:if="{{!userInfo}}">		
+	    <image src="/images/morentouxiang.jpg" class="img"></image>
+		<button class="weidenglu" type="default" bindtap="loadByWechat">微信快捷登录</button>
+	</view>
+	<!--已登录-->
+	<view wx:else class="bg" >
+		<image src="{{userInfo.avatarUrl}}" class="img"></image>
+		<text class="nickName" >{{userInfo.nickName}}</text>
+	</view>
+	<!--下半部分-->
+	<view class="nav4">
+		<navigator class="nav4_item" url="/pages/location/location">
+			<icon class="iconfont icon-xunzhang">
+			    <text>我的订单</text>
+				<view class="line"></view>
+			</icon>
+		</navigator>
+		<navigator class="nav4_item" url="/pages/guanzhu/guanzhu">
+			<icon class="iconfont icon-ziliaoku">
+			    <text>关注老师</text>
+				<view class="line"></view>
+			</icon>
+		</navigator>
+		<view class="nav4_bt">
+			<button class="contact" open-type="contact">
+			<icon class="iconfont icon-lianxi">
+			    <text>联系客服</text>
+				<view class="line2"></view>
+			</icon>
+			</button>
+		</view>
+		<view class="nav4_bt">
+			<button class="contact" open-type="feedback">
+			<icon class="iconfont icon-kaojizhongxin">
+			    <text>意见反馈</text>
+				<view class="line2"></view>
+			</icon>
+			</button>
+		</view>
+	</view>
+</view>
+

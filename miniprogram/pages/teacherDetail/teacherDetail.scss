@@ -1,0 +1,110 @@
+.header{
+	background-color: rgb(188, 251, 255);
+	height: 340rpx;
+	width: 100%;
+	position: relative;
+	border-radius: 50rpx;
+	.img{
+		width:225rpx;
+		height: 225rpx;
+		border-radius: 120rpx;
+		margin-left: 40rpx;
+		margin-top: 60rpx;
+		position: absolute;
+	}
+	.name{
+		margin-left: 310rpx;
+		margin-top: 45rpx;
+		font-size: 60rpx;
+		letter-spacing: 7rpx;
+		font-weight: bold;
+		position: absolute;
+	}
+	.area{
+		font-size: 34rpx;
+		margin-left: 490rpx;
+		margin-top:150rpx;
+		border: 1px solid;
+		width: 200rpx;
+		text-align: center;
+		color:rgb(238, 113, 113);
+		background-color: rgb(250, 226, 225);
+		border-radius: 20rpx;
+		font-weight: bold;
+		position: absolute;
+	}
+	.instrument{
+		font-size: 34rpx;
+		margin-left: 300rpx;
+		margin-top:150rpx;
+		border: 1px solid;
+		width: 160rpx;
+		text-align: center;
+		color:rgb(238, 113, 113);
+		background-color: rgb(250, 226, 225);
+		border-radius: 20rpx;
+		font-weight: bold;
+		position: absolute;
+	}
+	.introduce{
+		font-size: 34rpx;
+		margin-left: 300rpx;
+		margin-top:230rpx;
+		border: 1px solid;
+		width: 390rpx;
+		text-align: center;
+		color:rgb(238, 113, 113);
+		background-color: rgb(250, 226, 225);
+		border-radius: 20rpx;
+		font-weight: bold;
+		position: absolute;		
+	}
+}
+
+.midin{
+	margin-top: 20rpx;
+	margin-left: 30rpx;
+	font-size: 45rpx;
+	font-style: italic;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: rgb(238, 113, 113);
+}
+.mid{
+	background-image: linear-gradient(0deg,rgb(136, 228, 235),rgb(218, 248, 250));
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+	margin-top: 10rpx;
+	height: 670rpx;
+	border-radius: 20rpx;
+	.school{
+		border-bottom: 1px dashed rgb(153, 153, 153);
+		margin-top: 50rpx;
+		margin-left: 25rpx;
+		margin-right: 25rpx;
+	}
+}
+
+.bot{
+	background-image: linear-gradient(0deg,rgb(136, 228, 235),rgb(218, 248, 250));
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+	margin-top: 10rpx;
+	border-radius: 20rpx;
+	.school{
+		border-bottom: 1px dashed rgb(153, 153, 153);
+		margin-top: 50rpx;
+		margin-left: 25rpx;
+		margin-right: 25rpx;
+	}
+	.pinglunItem{
+		border-bottom: 2rpx solid gainsboro;
+		margin-left: 50rpx;
+		margin-top: 30rpx;
+	}
+	.more{
+		font-size: 28rpx;
+		margin-top: 18rpx;
+		margin-left: 500rpx;
+	}
+}

@@ -1,0 +1,151 @@
+.bottom{
+	height: 100%;
+	width: 750rpx;
+	background: pink;
+	position: fixed;
+	z-index: 0;
+}
+.content{
+	padding-top: 200rpx;
+}
+
+.wc{
+	color: white;
+	padding: 30rpx 0 30rpx 40rpx;
+}
+
+.top{
+	height: 100%;
+	width: 750rpx;
+	position: fixed;
+	background: #F6F6F6;
+	z-index: 0;
+	transition: all 0.4s ease;
+	.header{
+		image{
+			position: absolute;
+			width: 74rpx;
+			height: 74rpx;
+			left: 20rpx;
+			top: 16rpx;
+		}
+	}
+
+	.root {
+		background-color: rgb(211, 241, 255);
+		height: 160rpx;
+		display: flex;
+		padding: 15rpx;
+		.input {
+			flex: 1;
+			border: 1px solid gray;
+			border-radius: 15rpx;
+			margin-left: 100rpx;
+			margin-top: 10rpx;
+			margin-right: 20rpx;
+			padding-left: 25rpx;
+			font-size: 30rpx;
+		}
+		.sousuo{
+			font-size: 40rpx;
+			line-height: 68rpx;
+		}
+	}
+
+	.mid{
+		margin-top: -95rpx;
+		height: 100rpx;
+		.midbtn1{
+			color: rgb(79, 79, 163);
+			border-radius: 20rpx;;
+			background-color: #e7e7e7;
+			width: 190rpx;
+			line-height: 20rpx;
+			margin-left: 45rpx;
+			height: 60rpx;
+			margin-top: 15rpx;
+			float: left;
+			font-size: 34rpx;
+		}
+	}
+	
+	.bot{
+		.item {
+			margin-right: 20rpx;
+			margin-left: 20rpx;
+			border-radius: 20rpx;
+			height: 250rpx;
+			background-color: white;
+			position: relative;
+			margin-top: 25rpx;
+			.inimg {
+				width: 230rpx;
+				height: 230rpx;
+				margin-top: 10rpx;
+				margin-left: 10rpx;
+				float: left;
+				position: absolute;
+				border-radius: 10rpx;
+			}
+			.title {
+				display: -webkit-box;
+				font-size: 34rpx;
+				text-overflow:ellipsis;        /*文字隐藏后添加省略号*/
+				word-break: break-all;
+				-webkit-box-orient: vertical;
+				width: 430rpx;
+				height: 95rpx;
+				font-weight: bold;
+				margin-top: 10rpx;
+				margin-left: 260rpx;
+				position: absolute;
+				overflow: hidden;
+				-webkit-line-clamp: 2;       /*控制显示行数*/
+			}
+			.dianpu{
+				font-size: 26rpx;
+				margin-top: 125rpx;
+				margin-left: 260rpx;
+				padding-right: 15rpx;
+				padding-left: 15rpx;
+				position: absolute;		
+				background-color: #e7e7e7;
+				border-radius: 10rpx;
+				overflow: hidden;	
+				text-overflow:ellipsis;
+				white-space: nowrap;
+			}
+			.xiaoliang{
+				font-size: 26rpx;
+				margin-top: 125rpx;
+				margin-left: 540rpx;
+				padding-left: 20rpx;
+				padding-right: 20rpx;
+				position: absolute;		
+			}
+			.price{
+				font-size: 44rpx;
+				font-weight: bold;
+				color: rgb(235, 79, 68);
+				float: left;
+				margin-top: 182rpx;
+				width: 100rpx;
+				margin-left: 265rpx;
+				position: absolute;
+			}
+			.gwimg{
+				margin-left: 610rpx;
+				margin-top: 190rpx;
+				width: 50rpx;
+				height: 50rpx;
+			}
+		}
+	}
+
+}
+
+
+
+.c-stare1{
+	transform: rotate(0deg) scale(1) translate(38%,0%);
+}

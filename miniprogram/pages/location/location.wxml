@@ -1,0 +1,5 @@
+<map class="map" markers="{{markers}}" bindmarkertap="clickMap" longitude="118.584438" latitude="24.910592" show-location  scale="16"/>
+
+<view>地址:{{address}}</view>
+<view bindtap="callPhone" data-phone="{{phone}}">电话:{{phone}}（点击拨打）</view>
+<view bindtap="copyWeChat" data-weixin="{{weixin}}">微信:{{weixin}}（点击复制）</view>

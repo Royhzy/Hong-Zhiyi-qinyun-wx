@@ -1,0 +1,72 @@
+<view>
+	<view class="header1">欢迎使用</view>
+	<view class="header2">琴韵-乐器资源整合平台</view>
+</view>
+		
+<swiper indicator-dots circular autoplay interval="5000" indicator-active-color="gray">
+	<swiper-item>
+		<image src="/images/qyicon.png" class="lbimg"></image>
+	</swiper-item>
+	<swiper-item>
+		<image src="/images/banner1.jpg" class="lbimg"></image>
+	</swiper-item>
+</swiper>
+
+<view class="nav">    <!--中间导航nav-->
+	<navigator class="nav_item" url="/pages/location/location">
+		<icon class="iconfont icon-shengchanshang" style="background:#6F73DE; width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
+		<view class="nav_text">寻找琴行</view>
+    </navigator>
+    <navigator class="nav_item" url="/pages/yueqishop/yueqishop">
+		<icon class="iconfont icon-gouwuche" style="background:#FF6A6A; width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
+		<view class="nav_text">乐器商城</view>
+    </navigator>
+    <navigator class="nav_item" url="/pages/teacher/teacher">
+		<icon class="iconfont icon-jichuxinxi" style="background:#333333; width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
+		<view class="nav_text">寻找老师</view>
+	</navigator>
+</view>
+
+<view class="mid">
+	<view class="mid1">乐器介绍</view>
+	<view class="mid2">了解更多</view>
+</view>
+
+<view class="nav2">        <!--下面-->
+	<navigator class="nav2_item" url="/pages/piano/piano" style="background-image:linear-gradient(90deg,#454648,#626A7C);">
+		<icon class="iconfont icon-piano" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<text class="title1">钢琴</text>
+		<text class="title2">Piano</text>
+	</navigator>
+	<navigator class="nav2_item2" url="/pages/guzheng/guzheng" style="background-image: linear-gradient(90deg,#3399FF,#3BC9F9);">
+		<icon class="iconfont icon-aoli-guzheng" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<text class="title1">古筝</text>
+		<text class="title2">Chinese Zither</text>
+	</navigator>
+</view>
+
+<view class="nav2">
+	<navigator class="nav2_item" url="/pages/violin/violin" style="background-image:linear-gradient(90deg,#FD5772,#FD918E);">
+		<icon class="iconfont icon-violin" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<text class="title1">小提琴</text>
+		<text class="title2">violin</text>
+	</navigator>
+	<navigator class="nav2_item2" url="/pages/pipa/pipa" style="background-image: linear-gradient(90deg,#4475FC,#6E95FF);">
+		<icon class="iconfont icon-jita" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<text class="title1">琵琶</text>
+		<text class="title2">pipa</text>
+	</navigator>
+</view>	
+
+<view class="nav2">
+	<navigator class="nav2_item" url="/pages/guitar/guitar" style="background-image:linear-gradient(90deg,#189A87,#01DED5);">
+		<icon class="iconfont icon-jita" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<text class="title1">吉他</text>
+		<text class="title2">guitar</text>
+	</navigator>
+	<navigator class="nav2_item2" url="/pages/erhu/erhu" style="background-image: linear-gradient(90deg,#FF813F,#FFA94C);">
+		<icon class="iconfont icon-aoli-erhu" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<text class="title1">二胡</text>
+		<text class="title2">Chinese Erhu</text>
+	</navigator>
+</view>	

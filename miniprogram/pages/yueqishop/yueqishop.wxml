@@ -1,0 +1,63 @@
+<view class="page">
+	<view class="bottom">
+		<view  class="content">
+			<view class="wc">
+				<navigator url="/pages/yueqishop/yueqishop">钢琴</navigator>
+			</view>
+
+			<view class="wc">
+				<navigator url="/pages/violinshop/violinshop">小提琴</navigator>
+			</view>
+
+			<view class="wc">
+				<navigator url="/pages/location/location">吉他</navigator>
+			</view>
+
+			<view class="wc">
+				<navigator url="/pages/location/location">古筝</navigator>
+			</view>
+
+			<view class="wc">
+				<navigator url="/pages/location/location">琵琶</navigator>
+			</view>
+
+			<view class="wc">
+				<navigator url="/pages/location/location">二胡</navigator>
+			</view>
+		</view>
+	</view>
+
+	<view class="top {{open ? 'c-stare1' : ''}}" bindtouchstart="start" bindtouchmove="move" bindtouchend="end">
+
+		<view class="header">          <!--左上角图片-->
+			<image src="/image/more.png" bindtap="tap_ch"></image>
+		</view>
+
+		<view class="root">            <!--搜索框、筛选-->
+			<input class="input" placeholder="右滑查看其他乐器" bindinput="getKey" confirm-type="search" bindconfirm="goSearch"></input>
+			<view bindtap="goSearch" class="sousuo">搜索</view>
+		</view>
+
+
+		<view class="mid">
+			<button class="midbtn1" bindtap="xiaoliang">销量</button>
+			<button class="midbtn1">价格</button>
+			<button class="midbtn1" bindtap="selectAll">全部</button>				
+		</view>
+
+	<scroll-view scroll-y="true" class="bot" bindscrolltolower="touchBottom" style="height: {{scroll_height}}rpx;">
+		<view wx:for="{{list}}" wx:key="index">
+			<view class="item" bindtap="goDetail" data-id="{{item._id}}">
+				<image src="{{item.inimg}}" class="inimg"></image>
+				<text class="title">{{item.title}}</text>
+				<view class="dianpu">店铺：{{item.dianpu}}</view>
+				<view class="xiaoliang">销量：{{item.sale}}</view>
+				<view class="price">¥{{item.price}}</view>
+				<image src="/images/gouwuche.png" class="gwimg" catchtap="addgouwuche" data-item="{{item}}"></image>
+			</view>
+		</view>
+	</scroll-view>
+		
+	</view>
+</view>
+

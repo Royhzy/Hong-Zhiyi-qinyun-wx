@@ -1,0 +1,99 @@
+.root {
+	display: flex;
+	padding: 15rpx;
+  }
+  
+  .input {
+	flex: 1;
+	border: 1px solid gray;
+	border-radius: 15rpx;
+	margin-right: 30rpx;
+	padding-left: 25rpx;
+  }
+  
+  .item {
+	margin-right: 20rpx;
+	margin-left: 20rpx;
+	border-radius: 40rpx;
+	height: 250rpx;
+	background-color: white;
+	position: relative;
+	margin-top: 25rpx;
+	.img {
+		width: 230rpx;
+		height: 230rpx;
+		border-radius: 60px;
+		margin-top: 10rpx;
+		margin-left: 10rpx;
+		float: left;
+		position: absolute;
+	}
+	.name {
+		font-size: 42rpx;
+		font-weight: bold;
+		margin-top: 20rpx;
+		margin-left: 280rpx;
+		position: absolute;
+	}
+	.school{
+		font-size: 26rpx;
+		margin-top: 84rpx;
+		margin-left: 283rpx;
+		position: absolute;
+		white-space: nowrap;      /*文字超出省略号*/
+	}
+	.instrument{
+		font-size: 34rpx;
+		text-align: center;
+		width: 150rpx;
+		height: 48rpx;
+		font-weight: bold;
+		margin-top: 133rpx;
+		color:rgb(238, 113, 113);
+		background-color: rgb(250, 226, 225);
+		border-radius: 20rpx;
+		margin-left: 280rpx;
+		position: absolute;
+	}
+	.area{
+		font-size: 34rpx;
+		text-align: center;
+		padding-left: 20rpx;
+		padding-right: 20rpx;
+		height: 48rpx;
+		font-weight: bold;
+		margin-top: 133rpx;
+		color:rgb(238, 113, 113);
+		background-color: rgb(250, 226, 225);
+		border-radius: 20rpx;
+		margin-left: 443rpx;
+		position: absolute;		
+	}
+	.jie {
+		font-size: 26rpx;
+		color: rgb(235, 79, 68);
+		font-style: italic;
+		float: left;
+		margin-top: 200rpx;
+		position: relative;
+		margin-left: 376rpx;
+	}
+	.price{
+		font-style: italic;
+		font-size: 50rpx;
+		font-weight: bold;
+		color: rgb(235, 79, 68);
+		float: left;
+		margin-top: 176rpx;
+		width: 100rpx;
+		margin-left: 280rpx;
+		position: absolute;
+	}
+}
+  
+
+  
+
+  
+
+  

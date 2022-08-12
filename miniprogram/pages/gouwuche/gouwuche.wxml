@@ -1,0 +1,46 @@
+
+	<view class="top">
+
+		<view class="header">          <!--左上角图标-->
+			<icon wx:if="{{selectAllStatus&&list.length>0}}" type="success" bindtap="selectAll" color="#2F54EB" class="selectAll"/>
+			<icon wx:else type="circle" color="#2F54EB"  bindtap="selectAll" class="selectAll"/>
+		</view>
+
+		<view class="root">            <!--头部条-->
+			<view class="quanxuantext">全选</view>
+
+			<button class="shanchu" bindtap="removeList">删除</button>
+		</view>
+
+	<scroll-view scroll-y="true" class="bot" bindscrolltolower="touchBottom" style="height: {{scroll_height}}rpx;">
+
+	<view wx:if="{{list.length>0}}">
+		<view wx:for="{{list}}" wx:key="index">
+			<view class="item" bindtap="goDetail" data-id="{{item._id}}">
+				<icon wx:if="{{item.selected}}" type="success" color="#2F54EB" class="xuanze" catchtap="selectList" data-index="{{index}}" data-id="{{item._id}}"/>
+    			<icon wx:else type="circle" catchtap="selectList" class="xuanze" data-index="{{index}}" data-id="{{item._id}}"/>
+				<image src="{{item.inimg}}" class="inimg"></image>
+				<text class="title">{{item.title}}</text>
+				<view class="dianpu">店铺：{{item.dianpu}}</view>
+				<view class="price">¥{{item.price}}</view>
+				<image src="/images/jiahao.png" class="jiaimg" catchtap="jia" data-id="{{item._id}}"></image>     <!--catchtap不会进入冒泡事件-->
+				<text class="num">{{item.num?item.num:0}}</text>
+				<image src="/images/jianhao.png" class="jianimg" catchtap="jian" data-id="{{item._id}}"></image>
+			</view>
+		</view>
+	</view>
+
+	<view wx:else="{{list.length==0}}">
+		<view class="zanwu">购物车没有收藏的乐器哦</view>
+		<button class="qianwang" bindtap="goshop">点击前往乐器商城</button>
+	</view>
+	</scroll-view>
+		
+	<view class="foot">
+		
+		<view class="foottext">已选{{totalNum}}件，合计：¥{{totalMoney}}</view>
+		<button class="jiesuan">结算</button>
+	</view>
+</view>
+
+

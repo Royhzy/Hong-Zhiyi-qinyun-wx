@@ -1,0 +1,31 @@
+<view class="header">
+	<image src="{{dataList.img}}" class="img"></image>
+	<view class="name">{{dataList.name}}</view>
+	<view class="instrument">{{dataList.instrument}}</view>
+	<view class="area">{{dataList.area}}</view>
+	<view class="introduce">{{dataList.introduce}}</view>
+</view>
+
+
+<view class="midin">资料卡--------------</view>
+<view class="mid">
+	<view class="school">教龄：{{dataList.teachAge}}年</view>
+	<view class="school">教学乐器：{{dataList.instrument}}</view>	
+	<view class="school">所在地区：{{dataList.area}}</view>
+	<view class="school">学校：{{dataList.school}}</view>
+	<view class="school">简介：{{dataList.introduce}}</view>
+	<view class="school">价格：{{dataList.price}}元/节</view>
+</view>
+
+
+
+<view class="midin">评价--------------</view>
+<navigator class="bot" url="/pages/pingjiaDetail/pingjiaDetail">
+	<block wx:for="{{pinglun}}" wx:key="index">
+	<view class="pinglunItem">
+		<text>{{item.name}}：</text>
+		<text>{{item.content}}</text>
+	</view>
+	</block>
+	<view class="more">点击查看更多评价</view>
+</navigator>

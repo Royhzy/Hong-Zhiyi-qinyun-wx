@@ -1,0 +1,17 @@
+<view class="root">
+	<input class="input" placeholder="请输入要搜索的词" bindinput="getKey" confirm-type="search" bindconfirm="goSearch"></input>
+	<view bindtap="goSearch" class="sousuo">搜索</view>
+</view>
+
+
+
+<view wx:for="{{list}}" wx:key="index">
+	<view class="item" bindtap="goDetail" data-id="{{item._id}}">
+		<image src="{{item.img}}" class="img"></image>
+		<view class="name">{{item.name}}</view>
+		<view class="school">{{item.school}}</view>
+		<view class="area">{{item.area}}</view>
+		<view class="instrument">{{item.instrument}}</view>
+		<view class="jie">元/节起</view><view class="price">{{item.price}}</view>
+	</view>
+</view>
