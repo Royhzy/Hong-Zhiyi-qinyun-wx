@@ -1,0 +1,12 @@
+<view class="big">
+	<image src="https://www.freeimg.cn/i/2024/01/19/65a9f1c9acd4e.png" class="ewm"></image>
+	<view class="textti">琴韵—资源整合中心</view>
+	<view class="content">V  1.0.6</view>
+	<view class="gogzh" bindtap="gogzh">前往公众号</view>
+	<!--<video src="cloud://qinyun-7geq104o41d95220.7169-qinyun-7geq104o41d95220-1312824116/qyxuanchuan.mp4" class="vdo" autoplay="true" direction="90"></video>-->
+</view>
+
+<view class="dibu">
+	<view class="yinsi">《琴韵隐私政策》</view>
+	<view class="banquan">琴韵——资源整合中心版权所有</view>
+</view>

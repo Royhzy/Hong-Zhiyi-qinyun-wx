@@ -1,0 +1,50 @@
+/* 拜访内容 */
+.pop7 {
+	background-color: white;
+	width: 100%;
+	margin-bottom: 4%;
+	/* border: 1px solid black; */
+  }
+   
+  .pop7_title {
+	margin-left: 5%;
+	padding-top: 2%;
+	/* border: 1px solid black; */
+  }
+  .pop7_input {
+	margin-left: 7%;
+	/* border: 1px solid black; */
+  }
+  .addphoto {
+	width: 150rpx;
+	height: 150rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #F6F6F6;
+	border: 1px dashed gray;
+  }
+  .addtext {
+	/* border: 1px solid black; */
+	font-size: 50px;
+	color: #BFC1C2;
+  }
+  .addbtn {
+	margin-left: 8%;
+	padding-bottom: 5%;
+	width: 600rpx;
+	border: 1px solid black; 
+
+	.weui-uploader_img{
+		width: 230rpx;
+		height: 230rpx;
+		border: 1px solid black; 	
+	}	
+	.delete-btn{
+		width: 130rpx;
+		height: 130rpx;
+		border: 1px solid black; 
+	}
+
+  }

@@ -1,0 +1,135 @@
+<view class="head">
+  <view class="head-left flex-column j_c">
+    <image src="http://www.qinyunbs.com:8090/{{nlist.img_image}}" class="head-icon" />
+    <text class="head-left-text one">{{nlist.name}}</text>
+    <text class="head-left-text two">{{nlist.instrument}}</text>
+
+  </view>
+  <view class="head-right">
+    <view class="flex-column j_c" wx:for="{{weekList}}" wx:key="list">
+      <text class="head-week {{item.isCurr && 'head-right-curr'}}">{{item.week}}</text>
+      <text class="day {{item.isCurr && 'head-right-curr'}}">{{item.isCurr?'今天':item.day}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="container-left">
+    <block wx:for="{{time.one}}" wx:key="list">
+      <view>
+        <text class="con-title">{{item.index}}</text>
+        <text class="start">{{item.timeStart}}</text>
+        <text class="end">{{item.timeEnd}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="container-right">
+  <view>
+      <view class="con-item" wx:for="{{schedule.one}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==0}}">
+			  <view class="con-item-txt line_ellipsis" wx:if="{{schedule.one[index].type==1}}">可约</view>
+    	</view>
+    	<view class="con-item" wx:for="{{schedule.one}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==1}}">
+			  <view data-id="{{[index]}}" bindtap="subkeyueone" class="con-item-txt line_ellipsis" wx:if="{{schedule.one[index].type==1}}">可约</view>
+			  <view data-id="{{[index]}}" bindtap="addkeyueone" wx:if="{{schedule.one[index].type!=1}}" class="jiahao">+</view>
+    	</view>
+ 	</view>
+
+	<view>
+    <view class="con-item" wx:for="{{schedule.two}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==0}}">
+			  <view class="con-item-txt line_ellipsis" wx:if="{{schedule.two[index].type==1}}">可约</view>
+    	</view>
+    <view class="con-item" wx:for="{{schedule.two}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==1}}">
+			  <view data-id="{{[index]}}" bindtap="subkeyuetwo" class="con-item-txt line_ellipsis" wx:if="{{schedule.two[index].type==1}}">可约</view>
+			  <view data-id="{{[index]}}" bindtap="addkeyuetwo" wx:if="{{schedule.two[index].type!=1}}" class="jiahao">+</view>
+  	</view>
+ 	</view>
+
+  </view>
+</view>
+
+
+<view class="container flex-row mb20">
+  <view class="container-left left1">
+    <block wx:for="{{time.two}}" wx:key="list">
+      <view class="flex-column j_c">
+        <text class="con-title">{{item.index}}</text>
+        <text class="start">{{item.timeStart}}</text>
+        <text class="end">{{item.timeEnd}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="container-right">
+    <view>
+      <view class="con-item" wx:for="{{schedule.three}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==0}}">
+			  <view class="con-item-txt line_ellipsis" wx:if="{{schedule.three[index].type==1}}">可约</view>
+    	</view>
+    	<view class="con-item" wx:for="{{schedule.three}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==1}}">
+			  <view data-id="{{[index]}}" bindtap="subkeyuethree" class="con-item-txt line_ellipsis" wx:if="{{schedule.three[index].type==1}}">可约</view>
+			  <view data-id="{{[index]}}" bindtap="addkeyuethree" wx:if="{{schedule.three[index].type!=1}}" class="jiahao">+</view>
+    	</view>
+ 	</view>
+
+	 <view>
+    <view class="con-item" wx:for="{{schedule.four}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==0}}">
+			  <view class="con-item-txt line_ellipsis" wx:if="{{schedule.four[index].type==1}}">可约</view>
+    	</view>
+    	<view class="con-item" wx:for="{{schedule.four}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==1}}">
+			  <view data-id="{{[index]}}" bindtap="subkeyuefour" class="con-item-txt line_ellipsis" wx:if="{{schedule.four[index].type==1}}">可约</view>
+			  <view data-id="{{[index]}}" bindtap="addkeyuefour" wx:if="{{schedule.four[index].type!=1}}" class="jiahao">+</view>
+    	</view>
+ 	</view>
+
+  </view>
+</view>
+
+
+<view class="container flex-row">
+  <view class="container-left left1">
+    <block wx:for="{{time.three}}" wx:key="list">
+      <view class="flex-column j_c">
+        <text class="con-title">{{item.index}}</text>
+        <text class="start">{{item.timeStart}}</text>
+        <text class="end">{{item.timeEnd}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="container-right">
+    <view>
+      <view class="con-item" wx:for="{{schedule.five}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==0}}">
+			  <view class="con-item-txt line_ellipsis" wx:if="{{schedule.five[index].type==1}}">可约</view>
+    	</view>
+    	<view class="con-item" wx:for="{{schedule.five}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==1}}">
+			  <view data-id="{{[index]}}" bindtap="subkeyuefive" class="con-item-txt line_ellipsis" wx:if="{{schedule.five[index].type==1}}">可约</view>
+			  <view data-id="{{[index]}}" bindtap="addkeyuefive" wx:if="{{schedule.five[index].type!=1}}" class="jiahao">+</view>
+    	</view>
+ 	</view>
+
+	 <view>
+      <view class="con-item" wx:for="{{schedule.six}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==0}}">
+			  <view class="con-item-txt line_ellipsis" wx:if="{{schedule.six[index].type==1}}">可约</view>
+    	</view>
+    	<view class="con-item" wx:for="{{schedule.six}}" wx:key="list" data-item="{{item}}" wx:if="{{bianji==1}}">
+			  <view data-id="{{[index]}}" bindtap="subkeyuesix" class="con-item-txt line_ellipsis" wx:if="{{schedule.six[index].type==1}}">可约</view>
+			  <view data-id="{{[index]}}" bindtap="addkeyuesix" wx:if="{{schedule.six[index].type!=1}}" class="jiahao">+</view>
+    	</view>
+ 	</view>
+
+  </view>
+</view>
+
+<view class="dibufix">
+  <image src="/images/qyicon(1).png" class="dbimg"></image>
+
+	<button class="kefu" open-type="contact">
+		<icon class="iconfont icon-kefu" style="color: rgb(134, 134, 134); width: 120rpx; margin-left: -60rpx;height: 70rpx;"></icon>
+		<view class="kefutext">客服</view>
+	</button>
+	<button class="fenxiang" open-type="share">
+		<icon class="iconfont icon-fenxiang" style="color: rgb(134, 134, 134); width: 120rpx; margin-left: -60rpx;height: 70rpx;"></icon>
+		<view class="fenxiangtext">分享</view>
+	</button>
+
+  <button bindtap="bianji" class="yuyue" wx:if="{{bianji==0}}">编辑</button>
+  <button bindtap="baocunxiugai" class="yuyue" wx:if="{{bianji==1}}">保存修改</button>
+  
+</view>

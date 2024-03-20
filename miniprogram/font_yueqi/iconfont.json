@@ -1,0 +1,58 @@
+{
+  "id": "3169814",
+  "name": "乐器",
+  "font_family": "iconfontindex",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12363929",
+      "name": "古风物件，中国风，古代乐器，琵琶",
+      "font_class": "gufengwujianzhongguofenggudaileqipipa_huaban_huaban_huaban_huaban",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "567607",
+      "name": "violin",
+      "font_class": "violin",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "567549",
+      "name": "piano",
+      "font_class": "piano",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "4549801",
+      "name": "吉他",
+      "font_class": "jita",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "5093734",
+      "name": "架子鼓",
+      "font_class": "jiazigu",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "11832205",
+      "name": "aoli-古筝",
+      "font_class": "aoli-guzheng",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "11832211",
+      "name": "aoli-二胡",
+      "font_class": "aoli-erhu",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    }
+  ]
+}

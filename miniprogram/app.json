@@ -7,7 +7,7 @@
         "pages/yueqishop/yueqishop",
         "pages/teacher/teacher",
         "pages/teacherDetail/teacherDetail",
-        "pages/pingjiaDetail/pingjiaDetail",
+        "pages/kebiao/kebiao",
         "pages/piano/piano",
         "pages/violin/violin",
         "pages/violinshop/violinshop",
@@ -16,7 +16,23 @@
         "pages/erhu/erhu",
         "pages/guanzhu/guanzhu",
         "pages/guitar/guitar",
-        "pages/pipa/pipa"
+        "pages/pipa/pipa",
+        "pages/gongzhonghao/gongzhonghao",
+        "pages/guanyuwomen/guanyuwomen",
+        "pages/dingdan/dingdan",
+        "pages/jiesuan/jiesuan",
+        "pages/lijijiesuan/lijijiesuan",
+        "pages/guitarshop/guitarshop",
+        "pages/guzhengrshop/guzhengrshop",
+        "pages/pipashop/pipashop",
+        "pages/erhushop/erhushop",
+        "pages/node/node",
+        "pages/renzheng/renzheng",
+        "pages/ziliaoxiangqing/ziliaoxiangqing",
+        "pages/jskecheng/jskecheng",
+        "pages/jskebiao/jskebiao",
+        "pages/pingjia/pingjia",
+        "pages/pingjiaDetail/pingjiaDetail"
     ],
     "requiredPrivateInfos": [
         "getFuzzyLocation",
@@ -26,7 +42,7 @@
     "window": {
         "backgroundColor": "#F6F6F6",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarBackgroundColor": "#FFFFFF",
         "navigationBarTitleText": "琴韵",
         "navigationBarTextStyle": "black"
     },

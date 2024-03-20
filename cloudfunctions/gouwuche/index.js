@@ -17,8 +17,7 @@ exports.main = async (event, context) => {
     else if(event.type=="jiaNum")
     {
         return await db.collection("carts").where({
-            _id:event.id,
-            _openid:event.yhopenid
+            _id:event.id
         }).update({
             data: {
                 num: cmd.inc(1)
@@ -28,8 +27,7 @@ exports.main = async (event, context) => {
     else if(event.type=="jianNum")
     {
         return await db.collection("carts").where({
-            _id:event.id,
-            _openid:event.yhopenid
+            _id:event.id
         }).update({
             data: {
                 num: cmd.inc(-1)
@@ -39,8 +37,7 @@ exports.main = async (event, context) => {
     else if(event.type=="udSelected")
     {
         return await db.collection("carts").where({
-            _id:event.id,
-            _openid:event.yhopenid
+            _id:event.id
         }).update({
             data: {
                 selected:event.selected
@@ -64,8 +61,13 @@ exports.main = async (event, context) => {
             selected:true
         }).remove()       
     }
-    else if(event.type=="getSelected")
-    {
+    else if(event.type=="jiesuanUd"){
+        return await db.collection("carts").where({
+            _openid:event.yhopenid,
+            selected:true
+        }).remove()
+    }
+    else if(event.type=="getSelected"){
         return await db.collection("carts").where({
             _openid:event.yhopenid,
             selected:true

@@ -1,0 +1,60 @@
+<wxs src="../../common.wxs" module="common"></wxs>
+
+<scroll-view class="scroll-wrapper" scroll-x scroll-with-animation="true" scroll-into-view="item{{currentTab < 2 ? 0 : currentTab}}">
+	<view class="navigate-item" id="item{{index}}" wx:for="{{tabList}}" wx:key="index" data-index="{{index}}" bindtap="tabNav">
+		<view class="names {{currentTab == index ? 'active' : ''}}">{{item.name}}</view><!--tab文字-->
+		<view class="currtline {{currentTab == index ? 'active' : ''}}" wx:if="{{currentTab == index}}"></view>               <!--选中下划线-->
+	</view>
+</scroll-view>
+
+
+<swiper indicator-dots="{{false}}" bindchange="handleSwiper" current="{{currentTab}}" >
+
+	<swiper-item style="overflow: scroll;">
+		<scroll-view scroll-y bindscrolltolower="handleTolower">
+			<view wx:for="{{list}}" wx:key="index">
+				<view class="item" bindtap="goDetail" data-id="{{item.goodsid}}">
+					<image src="http://www.qinyunbs.com:8090/{{item.inimg_image}}" class="inimg"></image>
+					<text class="title">{{item.title}}</text>
+					<view class="dianpu">店铺：{{item.dianpu}}</view>
+					<view class="price">¥{{item.price}}</view>
+					<text class="num">共{{item.num?item.num:0}}件</text>
+					<view class="xinxitxt">收货信息：</view>
+					<text class="xinxi" user-select="true">{{item.name}}，{{item.phone}}，{{item.address}}</text>
+					<view class="bianhaotxt">订单编号：</view>
+					<text class="bianhao" user-select="true">{{item.id}}</text>
+					<view class="timetxt">下单时间：</view>
+					<text class="time">{{common.TimeToDate(item.xiadantime)}}</text>
+					<view class="peisongtxt">配送方式：</view>
+					<view class="peisong">快递 免邮</view>
+					<button class="querenshouhuo" catchtap="querenshouhuo" data-id="{{item.id}}" wx:if="{{item.shouhuo==0}}">确认收货</button>
+					<button class="daipingjia" catchtap="daipingjia" data-id="{{item.id}}" wx:if="{{item.shouhuo==1&&item.pingjia==0}}">待评价</button>
+					<button class="wancheng" wx:if="{{item.shouhuo==1&&item.pingjia==1}}">订单已完成</button>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+
+	<swiper-item style="overflow: scroll;">
+		<scroll-view scroll-y bindscrolltolower="handleTolower">
+			<view wx:for="{{shouhuoList}}" wx:key="index">
+				<view class="item" bindtap="goDetail" data-id="{{item.goodsid}}">
+					<image src="http://www.qinyunbs.com:8090/{{item.inimg_image}}" class="inimg"></image>
+					<text class="title">{{item.title}}</text>
+					<view class="dianpu">店铺：{{item.dianpu}}</view>
+					<view class="price">¥{{item.price}}</view>
+					<text class="num">共{{item.num?item.num:0}}件</text>
+					<view class="xinxitxt">收货信息：</view>
+					<text class="xinxi" user-select="true">{{item.name}}，{{item.phone}}，{{item.address}}</text>
+					<view class="bianhaotxt">订单编号：</view>
+					<text class="bianhao" user-select="true">{{item.id}}</text>
+					<view class="timetxt">下单时间：</view>
+					<text class="time">{{item.xiadantime}}</text>
+					<view class="peisongtxt">配送方式：</view>
+					<view class="peisong">快递 免邮</view>
+					<button class="querenshouhuo" catchtap="querenshouhuo" data-id="{{item.id}}">确认收货</button>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+</swiper>

@@ -1,7 +1,6 @@
-const db=wx.cloud.database();
-const cmd=db.command;
 var key= '';
 var openid='';
+var o=1;   //为了不让onshow第一次执行
 
 Page({
 
@@ -21,25 +20,21 @@ Page({
         })
     },
 
-    getList(yhopenid){                         //获取数据（最多100条）
-        wx.cloud.callFunction({
-            name:'gouwuche',
-            data:{
-                yhopenid:yhopenid,
-                type:"getCart"
+    getList(){                         //获取数据
+        let openid= wx.getStorageSync('openid')
+        var that = this
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Cart/getcart?openid='+openid,
+            success: function (res) {
+                that.setData({ 
+                    list: res.data 
+                })
+                //计算件数和价格
+                if(res.data.length>0){
+                    that.setCart(res.data)
+                    that.jishu()
+                }
             }
-        }).then(res=>{
-            console.log('调用成功',res.result.data)
-            var dataList=res.result.data
-            this.setData({
-                list:res.result.data
-            })
-            //计算件数和价格
-            if(dataList.length>0){
-                this.setCart(res.result.data)
-            }
-        }).catch(res=>{
-            console.log('调用失败',res)
         })
     },
 
@@ -54,7 +49,7 @@ Page({
         var id=e.currentTarget.dataset.id
         var numList=this.data.list
         numList.forEach(item=>{
-            if(item._id==id)
+            if(item.id==id)
             {
                 if(item.num<99){
                     item.num+=1
@@ -65,14 +60,10 @@ Page({
                             totalNum:this.data.totalNum+=1,
                         })
                     }
-                    wx.cloud.callFunction({
-                        name:'gouwuche',
-                        data:{
-                            id:item._id,
-                            type:"jiaNum",
-                            yhopenid:openid
-                        }
-                    })
+                    var that = this
+                    wx.request({
+                        url: 'http://www.qinyunbs.com:8090/wxapi/Cart/addcidnum?id='+item.id,
+                    }) 
                 }else{
                     wx.showToast({
                       title: '数量不能大于99',
@@ -90,7 +81,7 @@ Page({
         var id=e.currentTarget.dataset.id
         var numList=this.data.list
         numList.forEach(item=>{
-            if(item._id==id)
+            if(item.id==id)
             {
                 if(item.num>1){
                     item.num-=1
@@ -100,15 +91,10 @@ Page({
                             totalNum:this.data.totalNum-=1
                         })
                     }
-
-                    wx.cloud.callFunction({
-                        name:'gouwuche',
-                        data:{
-                            id:item._id,
-                            type:"jianNum",
-                            yhopenid:openid
-                        }
-                    })
+                    var that = this
+                    wx.request({
+                        url: 'http://www.qinyunbs.com:8090/wxapi/Cart/subcidnum?id='+item.id,
+                    }) 
                 }else{
                     wx.showToast({
                       title: '该物品不能再减少了',
@@ -165,21 +151,16 @@ Page({
         this.jishu()
 
         carts[index].selected = !selected;       // 改变状态
-        console.log(index,carts[index].selected)
+        //console.log(id,index,carts[index].selected)
         this.jishu()
 
         this.setData({
           list: carts
         });
-        wx.cloud.callFunction({
-            name:'gouwuche',
-            data:{
-                id:id,
-                type:"udSelected",
-                selected:carts[index].selected,
-                yhopenid:openid
-         }
-        })
+
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Cart/udselected?id='+id+'&selected='+carts[index].selected,
+        }) 
         this.setCart(carts)
     },
 
@@ -195,17 +176,13 @@ Page({
           selectAllStatus: selectAllStatus,
           list: carts
         });
-        wx.cloud.callFunction({
-            name:'gouwuche',
-            data:{
-                type:"SelectedAll",
-                selected:selectAllStatus,
-                yhopenid:openid
-         }
+
+        let openid= wx.getStorageSync('openid')
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Cart/udselectedall?openid='+openid+'&selected='+selectAllStatus,
         })
         this.setCart(carts)
     },
-
 
     removeList(){                           //删除
         let carts = this.data.list;
@@ -224,19 +201,18 @@ Page({
             })
         }
         else{
-            wx.cloud.callFunction({
-                name:'gouwuche',
-                data:{
-                    type:"removeSelect",
-                    yhopenid:openid
-             }
-            }).then(res=>{
-                wx.showToast({
-                  title: '删除成功',
-                })
-                this.setData({
-                    carts: carts
-                })
+            var that=this;
+            let openid= wx.getStorageSync('openid')
+            wx.request({
+                url: 'http://www.qinyunbs.com:8090/wxapi/Cart/rmselected?openid='+openid,
+                success: function (res) {
+                    wx.showToast({
+                        title: '删除成功',
+                      })
+                    that.setData({
+                        carts: carts
+                    })
+                }
             })
         }
 
@@ -258,7 +234,11 @@ Page({
                 })
             }else{               // 如果不为空
                 this.setCart(carts)
-                this.getList(openid)
+                this.getList()
+
+                const pages = getCurrentPages()                  //刷新
+                const perpage = pages[pages.length - 1]
+                perpage.onLoad() 
             } 
     },
 
@@ -268,27 +248,34 @@ Page({
         })
     },
 
+    gojiesuan(){
+        let openid= wx.getStorageSync('openid')
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Cart/getselectedcart?openid='+openid,
+            success: function (res) {
+                if(res.data.length>0){
+                    wx.navigateTo({
+                        url: '/pages/jiesuan/jiesuan',
+                    })       
+                }
+                else{
+                    wx.showToast({
+                      title: '请选择要购买的商品',
+                      icon:'none'
+                    })
+                }
+            }
+        })
+    },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    //获取用户openid
-    let that = this;    
-    wx.cloud.callFunction({      
-        name: 'getOpenid', 
-    }).then(res=>{
-        console.log('openid: ', res.result.openid)
-        openid = res.result.openid
-        this.getList(res.result.openid);
-    }) 
 
-    //计算scroll-view高度
-    let windowHeight = wx.getSystemInfoSync().windowHeight // 屏幕的高度
-    let windowWidth = wx.getSystemInfoSync().windowWidth // 屏幕的宽度
-    let ratio = 750 / windowWidth;
-    this.setData({
-        scroll_height: (windowHeight - 100) * ratio
-    })
+    let openid= wx.getStorageSync('openid')
+
+    this.getList()
   },
 
   /**
@@ -302,9 +289,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    const pages = getCurrentPages()
-    const perpage = pages[pages.length - 1]
-    perpage.onLoad()  
+    if(o!=1){          //先执行onload
+        const pages = getCurrentPages()
+        const perpage = pages[pages.length - 1]
+        perpage.onLoad()  
+    }
+    o+=1;
   },
 
   /**

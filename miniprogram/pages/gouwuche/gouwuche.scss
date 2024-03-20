@@ -15,28 +15,37 @@
 		}
 	}
 
+	  /* 去掉滚动条 */
+	  ::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		color: transparent;
+	  }
+	  
 	.root {
-		background-color: rgb(211, 241, 255);
-		height: 80rpx;
+		background-image: linear-gradient(45deg,#a3d1ff,#d9ecff);
+		height: 70rpx;
 		display: flex;
 		padding: 15rpx;
 		.quanxuantext{
 			margin-left: 74rpx;
 			font-size: 38rpx;
-			margin-top: 14rpx;
+			margin-top: 12rpx;
 			font-weight: bold;
 			color: #2F54EB;
 		}
 		.shanchu{
 			color: #2F54EB;
 			border: 1px solid;
-			width: 200rpx;
-			height: 60rpx;
+			width: 150rpx;
+			height: 56rpx;
 			font-size: 34rpx;
-			line-height: 20rpx;
+			line-height: 22rpx;
 			border-radius: 40rpx;
-			margin-left: 370rpx;
-			margin-top: 8rpx;
+			margin-left: 410rpx;
+			margin-top: 10rpx;
+			white-space: nowrap;
+			padding-left: 40rpx;
 		}
 	}
 
@@ -66,18 +75,19 @@
 			}
 			.title {
 				display: -webkit-box;
-				font-size: 34rpx;
+				font-size: 30rpx;
 				text-overflow:ellipsis;        /*文字隐藏后添加省略号*/
 				word-break: break-all;
 				-webkit-box-orient: vertical;
-				width: 400rpx;
-				height: 95rpx;
+				width: 380rpx;
+				height: 78rpx;
 				font-weight: bold;
-				margin-top: 10rpx;
+				margin-top: 14rpx;
 				margin-left: 315rpx;
 				position: absolute;
 				overflow: hidden;
 				-webkit-line-clamp: 2;       /*控制显示行数*/
+				line-height: 38rpx;
 			}
 			.dianpu{
 				font-size: 26rpx;
@@ -91,6 +101,7 @@
 				overflow: hidden;	
 				text-overflow:ellipsis;
 				white-space: nowrap;
+				color: #3c3c3c;
 			}
 			.price{
 				font-size: 44rpx;
@@ -133,7 +144,7 @@
 		}
 		.qianwang{
 			margin-top: 30rpx;
-			background-color: #D3F1FF;
+			background-image: linear-gradient(45deg,#a3d1ff,#d9ecff);
 			color: #2F54EB;
 			border-radius: 80rpx;
 			width: 450rpx;
@@ -141,26 +152,32 @@
 	}
 
 	.foot{
-		height: 85rpx;
+		height: 95rpx;
 		background-color: white;
 		position: fixed;
+		bottom: 0;
 		width: 100%;
 		float: left;
 		.foottext{
+			color: #3c3c3c;
 			float: left;
 			margin-left: 30rpx;
 			margin-top: 12rpx;
+			line-height: 70rpx;
+			font-size: 34rpx;
 		}
 		.jiesuan{
 			border: 1px solid;
 			font-size: 34rpx;
-			line-height: 20rpx;
-			width: 200rpx;
-			height: 60rpx;
+			line-height: 30rpx;
+			width: 150rpx;
+			height: 66rpx;
 			color: #2F54EB;
 			border-radius: 40rpx;
-			margin-left: 530rpx;
-			margin-top: 10rpx;
+			margin-left: 570rpx;
+			margin-top: 12rpx;
+			white-space: nowrap;
+			padding-left: 40rpx;
 		}
 	}
 }

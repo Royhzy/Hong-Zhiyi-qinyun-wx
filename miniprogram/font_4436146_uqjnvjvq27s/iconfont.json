@@ -1,0 +1,37 @@
+{
+  "id": "4436146",
+  "name": "教师主页",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5021331",
+      "name": "做题记录",
+      "font_class": "zuotijilu",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "5023105",
+      "name": "身份证号",
+      "font_class": "shenfenzhenghao",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "5041877",
+      "name": "编辑资料",
+      "font_class": "bianjiziliao",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "5404739",
+      "name": "培训计划",
+      "font_class": "peixunjihua",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    }
+  ]
+}

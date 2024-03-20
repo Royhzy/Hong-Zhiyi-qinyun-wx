@@ -1,0 +1,14 @@
+//微信脚本
+ 
+//分割字符串
+var getTags = function(tag){   
+	if(tag){
+		var a = tag.split(",");
+		return a;
+	}
+  }
+  module.exports = {
+ 	 getTags: getTags,
+  }
+
+

@@ -1,17 +1,40 @@
-<view class="root">
-	<input class="input" placeholder="请输入要搜索的词" bindinput="getKey" confirm-type="search" bindconfirm="goSearch"></input>
-	<view bindtap="goSearch" class="sousuo">搜索</view>
+<view class='fenlei'>
+	<view class="leixing">乐器类型</view>
+	<!-- 下拉框 -->
+    <view class='select_box'>
+    	<view class='select' catchtap='selectTaps'>
+        	<text class='select_text'>{{selectDatas[indexs]}}</text>
+			<image class='select_img {{shows&&"select_img_rotate"}}' src='../../images/xiangxia.png'></image>
+     	</view>
+      	<view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
+        	<text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
+     	</view>
+    </view>
+</view>
+
+<view class='fenlei2'>
+	<view class="leixing2">地区</view>
+	<!-- 下拉框 -->
+    <view class='select_box2'>
+    	<view class='select2' catchtap='selectTaps2'>
+        	<text class='select_text2'>{{selectDatas2[indexs2]}}</text>
+			<image class='select_img2 {{shows2&&"select_img_rotate"}}' src='../../images/xiangxia.png'></image>
+     	</view>
+      	<view class='option_box2' style='height:{{shows2?(selectDatas2.length>5?300:selectDatas2.length*60):0}}rpx;'>
+        	<text class='option2' style='{{indexs2==selectDatas2.length-1&&"border:0;"}}' wx:for='{{selectDatas2}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps2'>{{item}}</text>
+     	</view>
+    </view>
 </view>
 
 
 
 <view wx:for="{{list}}" wx:key="index">
-	<view class="item" bindtap="goDetail" data-id="{{item._id}}">
-		<image src="{{item.img}}" class="img"></image>
+	<view class="item" bindtap="goDetail" data-id="{{item.sfz}}">
+		<image src="http://www.qinyunbs.com:8090/{{item.img_image}}" class="img"></image>
 		<view class="name">{{item.name}}</view>
-		<view class="school">{{item.school}}</view>
+		<view class="school">{{item.school}}/{{item.educate}}</view>
 		<view class="area">{{item.area}}</view>
 		<view class="instrument">{{item.instrument}}</view>
-		<view class="jie">元/节起</view><view class="price">{{item.price}}</view>
+		<view class="jie">¥{{item.price}}</view>
 	</view>
 </view>

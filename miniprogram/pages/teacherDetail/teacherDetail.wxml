@@ -1,25 +1,49 @@
+<wxs src="../../app.wxs" module="app"/>
+
 <view class="header">
-	<image src="{{dataList.img}}" class="img"></image>
-	<view class="name">{{dataList.name}}</view>
-	<view class="instrument">{{dataList.instrument}}</view>
-	<view class="area">{{dataList.area}}</view>
-	<view class="introduce">{{dataList.introduce}}</view>
+	<image src="http://www.qinyunbs.com:8090/{{list.img_image}}" class="img"></image>
+	<view class="name">{{list.name}}</view>
+	<view class="instrument">{{list.instrument}}</view>
+	<view class="area">{{list.area}}</view>
+	<view class="introduce">{{list.school}}/{{list.educate}}</view>
 </view>
 
+<swiper circular autoplay="true" interval="3000">                   <!--记得引用-->
+	<swiper-item wx:for="{{app.getTags(list.inimg_images)}}" wx:key="index">
+		<image src="http://www.qinyunbs.com:8090/{{item}}" class="lbimg"></image>
+	</swiper-item>
+</swiper>
 
-<view class="midin">资料卡--------------</view>
 <view class="mid">
-	<view class="school">教龄：{{dataList.teachAge}}年</view>
-	<view class="school">教学乐器：{{dataList.instrument}}</view>	
-	<view class="school">所在地区：{{dataList.area}}</view>
-	<view class="school">学校：{{dataList.school}}</view>
-	<view class="school">简介：{{dataList.introduce}}</view>
-	<view class="school">价格：{{dataList.price}}元/节</view>
+	<view class="tit">资料卡</view>
+	<view class="school">教龄</view><view class="schoolxq">{{list.teachage}}年</view>
+	<view class="school">价格</view><view class="schoolxq">{{list.price}}元/节</view>
+	<view class="school">乐器</view><view class="schoolxq">{{list.instrument}}</view>	
+	<view class="school">地区</view><view class="schoolxq">{{list.area}}</view>
+	<view class="school">学校</view><view class="schoolxq">{{list.school}}/{{list.educate}}</view>
+	<view class="school">简介</view><view class="schoolxq">{{list.introduce}}</view>
 </view>
 
 
 
-<view class="midin">评价--------------</view>
+
+<view class="dibufix">
+	<button class="kefu" open-type="contact">
+		<icon class="iconfont icon-kefu" style="color: rgb(134, 134, 134); width: 120rpx; margin-left: -60rpx;height: 70rpx;"></icon>
+		<view class="kefutext">客服</view>
+	</button>
+	<button class="fenxiang" open-type="share">
+		<icon class="iconfont icon-fenxiang" style="color: rgb(134, 134, 134); width: 120rpx; margin-left: -60rpx;height: 70rpx;"></icon>
+		<view class="fenxiangtext">分享</view>
+	</button>
+
+	<button bindtap="guanzhu" class="guanzhu" wx:if="{{gzres==0}}">关注老师</button>
+	<button bindtap="guanzhu" class="guanzhu" wx:if="{{gzres==1}}">已关注</button>
+	<button bindtap="yuyue" class="yuyue" data-id="{{list.sfz}}">查看课表</button>
+</view>
+
+
+<!-- <view class="midin">评价--------------</view>
 <navigator class="bot" url="/pages/pingjiaDetail/pingjiaDetail">
 	<block wx:for="{{pinglun}}" wx:key="index">
 	<view class="pinglunItem">
@@ -28,4 +52,4 @@
 	</view>
 	</block>
 	<view class="more">点击查看更多评价</view>
-</navigator>
+</navigator> -->

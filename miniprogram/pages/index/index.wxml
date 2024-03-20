@@ -5,23 +5,23 @@
 		
 <swiper indicator-dots circular autoplay interval="5000" indicator-active-color="gray">
 	<swiper-item>
-		<image src="/images/qyicon.png" class="lbimg"></image>
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9e748a953b.png" class="lbimg"></image>
 	</swiper-item>
 	<swiper-item>
-		<image src="/images/banner1.jpg" class="lbimg"></image>
+		<image src="/images/banner2.jpg" class="lbimg"></image>
 	</swiper-item>
 </swiper>
 
 <view class="nav">    <!--中间导航nav-->
-	<navigator class="nav_item" url="/pages/location/location">
-		<icon class="iconfont icon-shengchanshang" style="background:#6F73DE; width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
-		<view class="nav_text">寻找琴行</view>
+	<navigator class="nav_item" url="/pages/location/location" hover-class="hover">
+		<icon class="iconfont icon-shengchanshang" style="background-image: linear-gradient(90deg,#4475FC,#6E95FF); width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
+		<view class="nav_text">教师端</view>
     </navigator>
-    <navigator class="nav_item" url="/pages/yueqishop/yueqishop">
-		<icon class="iconfont icon-gouwuche" style="background:#FF6A6A; width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
+    <navigator class="nav_item" url="/pages/yueqishop/yueqishop" hover-class="hover">
+		<icon class="iconfont icon-gouwuche" style="background-image: linear-gradient(90deg,#FF5502,#FF813F); width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
 		<view class="nav_text">乐器商城</view>
     </navigator>
-    <navigator class="nav_item" url="/pages/teacher/teacher">
+    <navigator class="nav_item" url="/pages/teacher/teacher" hover-class="hover">
 		<icon class="iconfont icon-jichuxinxi" style="background:#333333; width: 100rpx; border-radius: 35rpx; margin:20rpx auto; line-height:100rpx;"></icon>
 		<view class="nav_text">寻找老师</view>
 	</navigator>
@@ -29,44 +29,76 @@
 
 <view class="mid">
 	<view class="mid1">乐器介绍</view>
-	<view class="mid2">了解更多</view>
 </view>
 
 <view class="nav2">        <!--下面-->
 	<navigator class="nav2_item" url="/pages/piano/piano" style="background-image:linear-gradient(90deg,#454648,#626A7C);">
-		<icon class="iconfont icon-piano" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<icon class="iconfontindex icon-piano" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
 		<text class="title1">钢琴</text>
 		<text class="title2">Piano</text>
 	</navigator>
 	<navigator class="nav2_item2" url="/pages/guzheng/guzheng" style="background-image: linear-gradient(90deg,#3399FF,#3BC9F9);">
-		<icon class="iconfont icon-aoli-guzheng" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+		<icon class="iconfontindex icon-aoli-guzheng" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
 		<text class="title1">古筝</text>
 		<text class="title2">Chinese Zither</text>
 	</navigator>
 </view>
 
 <view class="nav2">
-	<navigator class="nav2_item" url="/pages/violin/violin" style="background-image:linear-gradient(90deg,#FD5772,#FD918E);">
-		<icon class="iconfont icon-violin" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+	<navigator class="nav2_item" url="/pages/violin/violin" style="background-image: linear-gradient(90deg,#FF813F,#FFA94C);">
+		<icon class="iconfontindex icon-violin" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
 		<text class="title1">小提琴</text>
 		<text class="title2">violin</text>
 	</navigator>
-	<navigator class="nav2_item2" url="/pages/pipa/pipa" style="background-image: linear-gradient(90deg,#4475FC,#6E95FF);">
-		<icon class="iconfont icon-jita" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+	<navigator class="nav2_item2" url="/pages/pipa/pipa" style="background-image:linear-gradient(90deg,#FD5772,#FD918E);">
+		<icon class="iconfontindex icon-gufengwujianzhongguofenggudaileqipipa_huaban_huaban_huaban_huaban" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
 		<text class="title1">琵琶</text>
 		<text class="title2">pipa</text>
 	</navigator>
 </view>	
 
 <view class="nav2">
-	<navigator class="nav2_item" url="/pages/guitar/guitar" style="background-image:linear-gradient(90deg,#189A87,#01DED5);">
-		<icon class="iconfont icon-jita" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+	<navigator class="nav2_item" url="/pages/guitar/guitar" style="background-image: linear-gradient(90deg,#4475FC,#6E95FF);">
+		<icon class="iconfontindex icon-jita" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
 		<text class="title1">吉他</text>
 		<text class="title2">guitar</text>
 	</navigator>
-	<navigator class="nav2_item2" url="/pages/erhu/erhu" style="background-image: linear-gradient(90deg,#FF813F,#FFA94C);">
-		<icon class="iconfont icon-aoli-erhu" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
+	<navigator class="nav2_item2" url="/pages/erhu/erhu" style="background-image:linear-gradient(90deg,#189A87,#01DED5);">
+		<icon class="iconfontindex icon-aoli-erhu" style="font-size:80rpx;color:#fff;line-height:160rpx;"></icon>
 		<text class="title1">二胡</text>
 		<text class="title2">Chinese Erhu</text>
 	</navigator>
 </view>	
+
+<view class="mid">
+	<view class="mid1">合作伙伴</view>
+</view>
+
+<view class="hezuo">
+	<view class="hezuo1">
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8b98b07.jpg" class="img1"></image>
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8b9b209.png" class="txt1"></image>
+	</view>
+	<view class="hezuo2">
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8ba149a.jpg" class="img2"></image>
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8b9ad54.png" class="txt2"></image>
+	</view>
+	<view class="hezuo3">
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8b87d82.jpg" class="img3"></image>
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8bdcd37.png" class="txt3"></image>
+	</view>
+	<view class="hezuo4">
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8ba3382.png" class="img3"></image>
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8bad97f.png" class="txt3"></image>
+	</view>
+	<view class="hezuo5">
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8c31f3a.png" class="img3"></image>
+		<image src="https://www.freeimg.cn/i/2024/01/19/65a9ee8b9e288.png" class="txt3"></image>
+	</view>
+
+
+	<view class="line1"></view>
+	<view class="line2"></view>
+	<view class="line3"></view>
+	<view class="line4"></view>
+</view>

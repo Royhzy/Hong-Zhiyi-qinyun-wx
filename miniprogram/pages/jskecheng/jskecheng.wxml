@@ -1,0 +1,71 @@
+<wxs src="../../common.wxs" module="common"></wxs>
+
+<scroll-view class="scroll-wrapper" scroll-x scroll-with-animation="true" scroll-into-view="item{{currentTab < 2 ? 0 : currentTab}}">
+	<view class="navigate-item" id="item{{index}}" wx:for="{{tabList}}" wx:key="index" data-index="{{index}}" bindtap="tabNav">
+		<view class="names {{currentTab == index ? 'active' : ''}}">{{item.name}}</view><!--tab文字-->
+		<view class="currtline {{currentTab == index ? 'active' : ''}}" wx:if="{{currentTab == index}}"></view>               <!--选中下划线-->
+	</view>
+</scroll-view>
+
+
+<swiper indicator-dots="{{false}}" bindchange="handleSwiper" current="{{currentTab}}" >
+
+			<swiper-item style="overflow: scroll;">
+				<scroll-view scroll-y bindscrolltolower="handleTolower">
+					<view wx:for="{{list}}" wx:key="index">
+						<view class="item2" data-id="{{item.teacherid}}">
+							<view class="dingdantxt">预约号：</view>
+							<text class="dingdan" user-select="true">{{item.id}}</text>
+							<view class="line"></view>
+							<view class="img">
+								<view class="txt">{{item.stuname}}</view>
+							</view>
+							<view class="name">
+								{{item.stuname}}
+								<text style="font-size: 28rpx;font-weight: normal;">学生</text>
+							</view>
+							<view class="area">{{item.area}}</view>
+							<view class="instrument">{{item.instrument}}</view>
+							<view class="jie">¥{{item.price}}</view>
+							<view class="dsk" wx:if="{{item.shangke==0}}">待上课</view>
+							<view class="wczhifu" wx:if="{{item.shangke==1}}">已上课</view>
+							<view class="stuid">学生id：{{item.openid}}</view>
+							<view class="yuyuetime">预约时间：{{common.TimeToDate(item.yuyuetime)}}</view>
+							<view class="shangketime" wx:if="{{item.shangketime==null}}">上课时间：学生未预约</view>
+							<view class="shangketime" wx:if="{{item.shangketime!=null}}">上课时间：{{common.TimeToDate(item.shangketime)}}</view>
+						</view>
+					</view>
+				</scroll-view>
+
+				
+			</swiper-item>
+			
+			<swiper-item style="overflow: scroll;">
+				<scroll-view scroll-y bindscrolltolower="handleTolower">
+					<view wx:for="{{yuyuelist}}" wx:key="index">
+						<view class="item2" data-id="{{item.teacherid}}">
+							<view class="dingdantxt">预约号：</view>
+							<text class="dingdan" user-select="true">{{item.id}}</text>
+							<view class="line"></view>
+							<view class="img">
+								<view class="txt">{{item.stuname}}</view>
+							</view>
+							<view class="name">
+								{{item.stuname}}
+								<text style="font-size: 28rpx;font-weight: normal;">学生</text>
+							</view>
+							<view class="area">{{item.area}}</view>
+							<view class="instrument">{{item.instrument}}</view>
+							<view class="jie">¥{{item.price}}</view>
+							<view class="dsk" wx:if="{{item.shangke==0}}">待上课</view>
+							<view class="wczhifu" wx:if="{{item.shangke==1}}">已上课</view>
+							<view class="stuid">学生id：{{item.openid}}</view>
+							<view class="yuyuetime">预约时间：{{common.TimeToDate(item.yuyuetime)}}</view>
+							<view class="shangketime" wx:if="{{item.shangketime==null}}">上课时间：学生未预约</view>
+							<view class="shangketime" wx:if="{{item.shangketime!=null}}">上课时间：{{common.TimeToDate(item.shangketime)}}</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+</swiper>

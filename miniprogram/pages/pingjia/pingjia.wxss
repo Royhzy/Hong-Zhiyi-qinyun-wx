@@ -1,0 +1,247 @@
+@charset "UTF-8";
+.star-pos {
+  margin: 10rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 110rpx;
+  margin-left: 270rpx;
+  position: absolute;
+}
+
+.stars {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+}
+
+.item {
+  overflow: hidden;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 20rpx;
+  height: 430rpx;
+  background-color: white;
+  position: relative;
+  margin-top: 25rpx;
+  padding-top: 60rpx;
+}
+
+.item .inimg {
+  width: 190rpx;
+  height: 190rpx;
+  margin-top: 10rpx;
+  margin-left: 25rpx;
+  float: left;
+  position: absolute;
+  border-radius: 10rpx;
+}
+
+.item .title {
+  display: -webkit-box;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  /*文字隐藏后添加省略号*/
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  width: 454rpx;
+  height: 85rpx;
+  font-weight: bold;
+  margin-top: 4rpx;
+  margin-left: 240rpx;
+  position: absolute;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  /*控制显示行数*/
+}
+
+.item .dianpu {
+  font-size: 26rpx;
+  margin-top: -45rpx;
+  margin-left: 15rpx;
+  padding-right: 15rpx;
+  padding-left: 15rpx;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item .price {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #eb4f44;
+  float: left;
+  margin-top: 150rpx;
+  width: 100rpx;
+  margin-left: 240rpx;
+  position: absolute;
+}
+
+.item .num {
+  width: 93rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #979797;
+  margin-left: 600rpx;
+  margin-top: 158rpx;
+  height: 34rpx;
+  position: absolute;
+}
+
+.item .xinxitxt {
+  margin-top: 214rpx;
+  font-size: 26rpx;
+  float: left;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .xinxi {
+  margin-top: 214rpx;
+  margin-left: 170rpx;
+  padding-right: 30rpx;
+  font-size: 26rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.item .bianhaotxt {
+  margin-top: 290rpx;
+  font-size: 26rpx;
+  float: left;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .bianhao {
+  margin-top: 292rpx;
+  margin-left: 170rpx;
+  padding-right: 30rpx;
+  font-size: 26rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.item .timetxt {
+  margin-top: 334rpx;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .time {
+  margin-top: 334rpx;
+  margin-left: 170rpx;
+  padding-right: 30rpx;
+  font-size: 26rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.item .peisongtxt {
+  margin-top: 376rpx;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .peisong {
+  margin-top: 376rpx;
+  font-size: 26rpx;
+  margin-left: 170rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.tianxie {
+  background-color: #fff;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 30rpx;
+  height: 440rpx;
+  margin-top: 30rpx;
+}
+
+.tianxie .inimg {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 30rpx;
+  margin-left: 25rpx;
+  float: left;
+  position: absolute;
+  border-radius: 120rpx;
+}
+
+.tianxie .nickname {
+  display: -webkit-box;
+  font-size: 36rpx;
+  text-overflow: ellipsis;
+  /*文字隐藏后添加省略号*/
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  width: 450rpx;
+  height: 85rpx;
+  margin-left: 210rpx;
+  position: absolute;
+  overflow: hidden;
+  margin-top: 40rpx;
+  -webkit-line-clamp: 2;
+  /*控制显示行数*/
+}
+
+.tianxie .pingfen {
+  display: -webkit-box;
+  font-size: 30rpx;
+  width: 450rpx;
+  height: 85rpx;
+  margin-left: 210rpx;
+  position: absolute;
+  overflow: hidden;
+  margin-top: 110rpx;
+  color: #686868;
+}
+
+.tianxie .drawer_content {
+  overflow-y: scroll;
+  margin-top: 150rpx;
+  /*超出父盒子高度可滚动*/
+}
+
+.tianxie .btn_ok {
+  padding: 10px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #E8E8EA;
+  color: #2499d3;
+  background-image: linear-gradient(90deg, #73b9ff, #d9f4fd);
+  border-radius: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.tianxie .title {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  margin: 5% 0 0 0;
+  margin-left: 10rpx;
+  font-size: 38rpx;
+}
+
+.tianxie .input_base {
+  width: 75%;
+  margin: 5% 0 0 0;
+  border-bottom: 2rpx solid #ccc;
+  height: 60rpx;
+}
+
+.tianxie input {
+  font: 15px "microsoft yahei";
+  background: #fff;
+  color: #000;
+}
+
+.tianxie .grid {
+  display: flex;
+  margin: 20px;
+}

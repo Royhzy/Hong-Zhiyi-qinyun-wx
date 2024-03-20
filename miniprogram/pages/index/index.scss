@@ -1,0 +1,231 @@
+.header1{
+	font-size: 42rpx;
+	font-weight: bold;
+	letter-spacing: 2rpx;
+	margin-left: 30rpx;
+}
+.header2{
+	font-size: 30rpx;
+	color: gray;
+	float: right;
+	margin-right: 30rpx;
+	margin-top: -46rpx;
+}
+
+
+swiper{
+	margin-top: 12rpx;
+	margin-left: 30rpx;
+	margin-right: 222rpx;
+	height: 300rpx;
+	width: 694rpx;
+}
+.lbimg{
+	height: 100%;
+	width: 100%;
+	border-radius: 20rpx;
+}
+
+
+.nav{
+	display: flex;
+	margin-top: 20rpx;
+}
+.nav_item{
+	width: 25%;
+	text-align: center;
+	margin-left: 45rpx;
+}
+.nav_text{
+	font-size: 28rpx;
+}
+.hover{
+	background: transparent;
+}
+
+
+.mid{
+	margin-top: 50rpx;
+}
+.mid1{
+	font-size: 36rpx;
+	letter-spacing: 2rpx;
+	margin-left: 30rpx;
+	font-weight: bold;
+}
+
+
+.nav2{
+	display: flex;
+	margin-top: 10rpx;
+}
+.nav2_item{
+	margin-left: 25rpx;
+	margin-top: 20rpx;
+	padding-right: 30rpx;
+	width: 290rpx;
+	height: 160rpx;
+	border-radius: 25rpx;
+}
+.title1{
+	color: #FFFFFF;
+	font-size: 40rpx;	
+	letter-spacing: 2rpx;
+	display: flex;
+	margin-top: -116rpx;
+	margin-left: 140rpx;
+	font-family: webfont;
+}
+.title2{
+	color: #ccc;
+	font-size: 22rpx;
+	display: flex;
+	margin-left: 140rpx;
+	white-space: nowrap;
+}
+.nav2_item2{
+	margin-left: 65rpx;
+	margin-top: 20rpx;
+	padding-right: 30rpx;
+	width: 290rpx;
+	height: 160rpx;
+	border-radius: 25rpx;
+}
+
+
+.hezuo{
+	margin-top: 20rpx;
+	height: 400rpx;
+	border-radius: 20rpx;
+	margin-left: 26rpx;
+	margin-right: 25rpx;
+	background-color: #fff;
+	margin-bottom: 50rpx;
+	position: relative;
+	.hezuo1{
+		width: 234rpx;
+		height: 280rpx;
+		float: left;
+		.img1{
+			width: 170rpx;
+			height: 130rpx;
+			margin-top: 50rpx;
+			margin-left: 28rpx;
+		}
+		.txt1{
+			width: 160rpx;
+			height: 70rpx;
+			margin-left: 40rpx;
+			float: left;
+		}
+	}
+	.hezuo2{
+		width:450rpx;
+		height: 280rpx;
+		float: left;
+		.img2{
+			width: 190rpx;
+			height: 150rpx;
+			margin-top: 40rpx;
+			margin-left: 154rpx;
+		}
+		.txt2{
+			width: 420rpx;
+			height: 50rpx;
+			margin-left: 40rpx;
+			margin-top: 5rpx;
+			float: left;
+		}
+	}
+	.hezuo3{
+		width:238rpx;
+		height: 116rpx;
+		float: left;
+		.img3{
+			width: 70rpx;
+			height: 70rpx;
+			margin-top: 28rpx;
+			margin-left: 18rpx;
+			float: left;
+			margin-right: 10rpx;
+		}
+		.txt3{
+			width: 150rpx;
+			height: 60rpx;
+			margin-left: 80rpx;
+			float: left;
+			margin-top: -60rpx;
+		}
+	}
+	.hezuo4{
+		width:232rpx;
+		height: 116rpx;
+		float: left;
+		.img3{
+			width: 70rpx;
+			height: 70rpx;
+			margin-top: 28rpx;
+			margin-left: 18rpx;
+			float: left;
+			margin-right: 10rpx;
+		}
+		.txt3{
+			width: 150rpx;
+			height: 60rpx;
+			margin-left: 80rpx;
+			float: left;
+			margin-top: -60rpx;
+		}
+	}
+	.hezuo5{
+		width:230rpx;
+		height: 116rpx;
+		float: left;
+		.img3{
+			width: 70rpx;
+			height: 100rpx;
+			margin-top: 10rpx;
+			margin-left: 14rpx;
+			float: left;
+			margin-right: 10rpx;
+		}
+		.txt3{
+			width: 140rpx;
+			height: 60rpx;
+			margin-left: 80rpx;
+			float: left;
+			margin-top: -78rpx;
+		}
+	}
+	.line1{
+		background-color: rgb(224, 224, 224);
+		width: 2rpx;
+		height: 230rpx;
+		margin-left: 230rpx;
+		margin-top: 30rpx;
+		position: absolute;
+	}
+	.line2{
+		background-color: rgb(224, 224, 224);
+		width: 700rpx;
+		height: 2rpx;
+		margin-top: 280rpx;
+		position: absolute;
+	}
+	.line3{
+		background-color: rgb(224, 224, 224);
+		width: 2rpx;
+		height: 90rpx;
+		margin-left: 234rpx;
+		margin-top: 300rpx;
+		position: absolute;
+	}
+	.line4{
+		background-color: rgb(224, 224, 224);
+		width: 2rpx;
+		height: 90rpx;
+		margin-left: 464rpx;
+		margin-top: 300rpx;
+		position: absolute;
+	}
+}

@@ -1,18 +1,28 @@
 .bottom{
 	height: 100%;
 	width: 750rpx;
-	background: pink;
+	background-image: linear-gradient(90deg,#64b1ff,#c1e0ff);
 	position: fixed;
 	z-index: 0;
-}
-.content{
-	padding-top: 200rpx;
+
+	.content{
+		padding-top: 200rpx;
+		.wc{
+			border-bottom: 1px solid #f0f0f0;
+			color:#f0f0f0;
+			padding: 30rpx 0 30rpx 0;
+		}
+		.wcgq{
+			border-top: 1px solid#f0f0f0;
+			border-bottom: 1px solid #f0f0f0;
+			color:#f0f0f0;
+			padding: 30rpx 0 30rpx 0;			
+		}
+	}
 }
 
-.wc{
-	color: white;
-	padding: 30rpx 0 30rpx 40rpx;
-}
+
+
 
 .top{
 	height: 100%;
@@ -30,25 +40,41 @@
 			top: 16rpx;
 		}
 	}
+	
+    /* 去掉滚动条 */
+	::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		color: transparent;
+	  }
 
 	.root {
-		background-color: rgb(211, 241, 255);
+		background-image: linear-gradient(45deg,#a3d1ff,#d9ecff);
 		height: 160rpx;
 		display: flex;
 		padding: 15rpx;
 		.input {
 			flex: 1;
 			border: 1px solid gray;
-			border-radius: 15rpx;
+			border-radius: 20rpx;
 			margin-left: 100rpx;
-			margin-top: 10rpx;
-			margin-right: 20rpx;
+			margin-top: 15rpx;
+			margin-right: 10rpx;
 			padding-left: 25rpx;
 			font-size: 30rpx;
+			height: 50rpx;
 		}
 		.sousuo{
-			font-size: 40rpx;
-			line-height: 68rpx;
+			font-size: 36rpx;
+			line-height: 54rpx;
+			color: rgb(106, 133, 255);
+			font-weight: bold;
+			height: 55rpx;
+			width: 96rpx;
+			text-align: center;
+			margin-top: 14rpx;
+			border-radius: 20rpx;
+
 		}
 	}
 
@@ -56,9 +82,9 @@
 		margin-top: -95rpx;
 		height: 100rpx;
 		.midbtn1{
-			color: rgb(79, 79, 163);
-			border-radius: 20rpx;;
-			background-color: #e7e7e7;
+			color: rgb(106, 133, 255);
+			border-radius: 20rpx;
+			background-color: #f5f3f3;
 			width: 190rpx;
 			line-height: 20rpx;
 			margin-left: 45rpx;
@@ -66,6 +92,7 @@
 			margin-top: 15rpx;
 			float: left;
 			font-size: 34rpx;
+			padding-top: 20rpx;
 		}
 	}
 	
@@ -94,7 +121,7 @@
 				word-break: break-all;
 				-webkit-box-orient: vertical;
 				width: 430rpx;
-				height: 95rpx;
+				height: 90rpx;
 				font-weight: bold;
 				margin-top: 10rpx;
 				margin-left: 260rpx;
@@ -114,6 +141,7 @@
 				overflow: hidden;	
 				text-overflow:ellipsis;
 				white-space: nowrap;
+				color: #3c3c3c;
 			}
 			.xiaoliang{
 				font-size: 26rpx;
@@ -122,6 +150,7 @@
 				padding-left: 20rpx;
 				padding-right: 20rpx;
 				position: absolute;		
+				color: #3c3c3c;
 			}
 			.price{
 				font-size: 44rpx;

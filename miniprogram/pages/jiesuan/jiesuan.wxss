@@ -1,0 +1,168 @@
+@charset "UTF-8";
+.huoqudizhi {
+  background-image: linear-gradient(45deg, #a3d1ff, #d9ecff);
+  margin-top: 30rpx;
+  color: #5577ff;
+}
+
+.dizhi {
+  font-size: 30rpx;
+  white-space: nowrap;
+  border-radius: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  height: 160rpx;
+  font-weight: lighter;
+  background-color: #fff;
+}
+
+.dizhi .dzimg {
+  height: 60rpx;
+  width: 60rpx;
+  margin-left: 30rpx;
+  margin-top: 45rpx;
+  float: left;
+}
+
+.dizhi .name {
+  font-size: 38rpx;
+  margin-left: 30rpx;
+  margin-top: 22rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+
+.dizhi .phone {
+  color: gray;
+  font-size: 24rpx;
+  margin-left: 164rpx;
+  margin-top: 36rpx;
+}
+
+.dizhi .address {
+  font-size: 28rpx;
+  margin-left: 120rpx;
+  margin-top: 14rpx;
+}
+
+.item {
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 20rpx;
+  height: 220rpx;
+  background-color: white;
+  position: relative;
+  margin-top: 25rpx;
+  padding-top: 60rpx;
+}
+
+.item .inimg {
+  width: 190rpx;
+  height: 190rpx;
+  margin-top: 10rpx;
+  margin-left: 25rpx;
+  float: left;
+  position: absolute;
+  border-radius: 10rpx;
+}
+
+.item .title {
+  display: -webkit-box;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  /*文字隐藏后添加省略号*/
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  width: 450rpx;
+  height: 85rpx;
+  font-weight: bold;
+  margin-top: 4rpx;
+  margin-left: 240rpx;
+  position: absolute;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  /*控制显示行数*/
+}
+
+.item .dianpu {
+  font-size: 26rpx;
+  margin-top: -45rpx;
+  margin-left: 15rpx;
+  padding-right: 15rpx;
+  padding-left: 15rpx;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item .peisong {
+  margin-left: 240rpx;
+  margin-top: 100rpx;
+  font-size: 26rpx;
+  color: #3c3c3c;
+}
+
+.item .price {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #eb4f44;
+  float: left;
+  margin-top: 24rpx;
+  width: 100rpx;
+  margin-left: 240rpx;
+  position: absolute;
+}
+
+.item .num {
+  width: 93rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #979797;
+  margin-left: 590rpx;
+  margin-top: 32rpx;
+  height: 34rpx;
+  position: absolute;
+}
+
+.foot {
+  height: 95rpx;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  float: left;
+}
+
+.foot .gong {
+  color: #979797;
+  float: left;
+  margin-left: 208rpx;
+  margin-top: 16rpx;
+  line-height: 74rpx;
+  font-size: 26rpx;
+}
+
+.foot .allmoney {
+  color: #eb4f44;
+  float: left;
+  margin-top: 12rpx;
+  line-height: 76rpx;
+  font-size: 38rpx;
+}
+
+.foot .jiesuan {
+  font-weight: lighter;
+  font-size: 28rpx;
+  line-height: 34rpx;
+  width: 200rpx;
+  height: 66rpx;
+  color: #ffffff;
+  background-image: linear-gradient(90deg, #ff8036, #ffa46f);
+  border-radius: 40rpx;
+  margin-left: 530rpx;
+  margin-top: 16rpx;
+  white-space: nowrap;
+  padding-left: 44rpx;
+}

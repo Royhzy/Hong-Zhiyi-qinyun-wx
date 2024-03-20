@@ -1,0 +1,85 @@
+
+.bg{
+	width: 100%;
+	height: 450rpx;
+	background-image: linear-gradient(90deg,#73b9ff,#d9f4fd);
+	.addbtn{
+		background-color: #fff;
+		margin-top: 60rpx;
+		height: 178rpx;
+		width: 178rpx;
+		border-radius: 150rpx;
+		margin-left: 38%;
+		.sctxt{
+			font-size: 30rpx;
+			text-align: center;
+			padding-top: 60rpx;
+			color: rgb(99, 99, 99);
+		}
+	}
+}
+
+.tianxie{
+	background-color: #fff;
+	margin-top: -180rpx;
+	margin-left: 40rpx;
+	margin-right: 40rpx;
+	border-radius: 30rpx;
+	height: 1090rpx;
+
+  .drawer_content {
+	overflow-y: scroll;
+	/*超出父盒子高度可滚动*/
+  }
+  .btn_ok {
+	padding: 10px;
+	font: 20px "microsoft yahei";
+	text-align: center;
+	border-top: 1px solid #E8E8EA;
+	color: #2499d3;
+	background-image: linear-gradient(90deg,#73b9ff,#d9f4fd);
+	border-radius: 30rpx;
+  }
+  .bottom {
+	padding-bottom: 8px;
+  }
+  .title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25%;
+	margin:5% 0 0 0;
+	border-bottom: 2rpx solid #ccc;
+  }
+  .input_base {
+	width:75%;
+	margin:5% 0 0 0;
+	padding-left:5%;
+	border-bottom: 2rpx solid #ccc;
+  }
+  input {
+	font: 15px "microsoft yahei";
+	background: #fff;
+	color: #000;
+  }
+  .grid {
+	display: flex;
+	margin:20px;
+  }
+  .addsfzbtn{
+	background-color: rgb(223, 223, 223);
+	margin-top: 10rpx;
+	height: 178rpx;
+	width: 178rpx;
+	border-radius: 20rpx;
+	margin-left: 30rpx;
+	.scsfztxt{
+		font-size: 30rpx;
+		text-align: center;
+		padding-top: 60rpx;
+		color: rgb(99, 99, 99);
+	}
+  }
+}
+
+

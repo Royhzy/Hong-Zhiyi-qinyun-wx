@@ -1,2 +1,56 @@
-<!--pages/guanzhu/guanzhu.wxml-->
-<text>pages/guanzhu/guanzhu.wxml</text>
+<wxs src="../../common.wxs" module="common"></wxs>
+
+<scroll-view class="scroll-wrapper" scroll-x scroll-with-animation="true" scroll-into-view="item{{currentTab < 2 ? 0 : currentTab}}">
+	<view class="navigate-item" id="item{{index}}" wx:for="{{tabList}}" wx:key="index" data-index="{{index}}" bindtap="tabNav">
+		<view class="names {{currentTab == index ? 'active' : ''}}">{{item.name}}</view><!--tab文字-->
+		<view class="currtline {{currentTab == index ? 'active' : ''}}" wx:if="{{currentTab == index}}"></view>               <!--选中下划线-->
+	</view>
+</scroll-view>
+
+
+<swiper indicator-dots="{{false}}" bindchange="handleSwiper" current="{{currentTab}}" >
+
+			<swiper-item style="overflow: scroll;">
+				<scroll-view scroll-y bindscrolltolower="handleTolower">
+					<view wx:for="{{list}}" wx:key="index">
+						<view class="item" bindtap="goDetail" data-id="{{item.teacher_id}}">
+							<image src="http://www.qinyunbs.com:8090/{{item.img_image}}" class="img"></image>
+							<view class="name">{{item.name}}</view>
+							<view class="school">{{item.school}}/{{item.educate}}</view>
+							<view class="area">{{item.area}}</view>
+							<view class="instrument">{{item.instrument}}</view>
+							<view class="jie">¥{{item.price}}</view>
+						</view>
+					</view>
+				</scroll-view>
+
+				
+			</swiper-item>
+			
+			<swiper-item style="overflow: scroll;">
+				<scroll-view scroll-y bindscrolltolower="handleTolower">
+					<view wx:for="{{yuyuelist}}" wx:key="index">
+						<view class="item2" bindtap="goDetail" data-id="{{item.teacherid}}">
+							<view class="dingdantxt">预约号：</view>
+							<text class="dingdan" user-select="true">{{item.id}}</text>
+							<view class="line"></view>
+							<image src="http://www.qinyunbs.com:8090/{{item.img_image}}" class="img"></image>
+							<view class="name">{{item.name}}</view>
+							<view class="school">{{item.school}}/{{item.educate}}</view>
+							<view class="area">{{item.area}}</view>
+							<view class="instrument">{{item.instrument}}</view>
+							<view class="jie">¥{{item.price}}</view>
+							<view class="dsk" wx:if="{{item.shangke==0}}">待上课</view>
+							<view catchtap="zhifu" class="zhifu" wx:if="{{item.shangke==1&&item.feiyong==0}}" data-item="{{item}}">待支付</view>
+							<view class="wczhifu" wx:if="{{item.shangke==1&&item.feiyong==1}}">已完成交易</view>
+							<view class="yuyuetime">预约时间：{{common.TimeToDate(item.yuyuetime)}}</view>
+							<view class="shangketime" wx:if="{{item.shangketime==null}}">上课时间：未预约（请联系客服预约上课时间）</view>
+							<view class="shangketime" wx:if="{{item.shangketime!=null}}">上课时间：{{common.TimeToDate(item.shangketime)}}</view>
+							<view class="zhifutime" wx:if="{{item.feiyongtime==null}}">支付时间：暂未支付</view>
+							<view class="zhifutime" wx:if="{{item.feiyongtime!=null}}">支付时间：{{common.TimeToDate(item.feiyongtime)}}</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+</swiper>

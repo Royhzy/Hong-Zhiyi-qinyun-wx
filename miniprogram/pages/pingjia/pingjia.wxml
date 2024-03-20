@@ -1,0 +1,42 @@
+<wxs src="../../common.wxs" module="common"></wxs>
+<view wx:for="{{list}}" wx:key="index">
+	<view class="item">
+		<image src="http://www.qinyunbs.com:8090/{{item.inimg_image}}" class="inimg"></image>
+		<text class="title">{{item.title}}</text>
+		<view class="dianpu">店铺：{{item.dianpu}}</view>
+		<view class="price">¥{{item.price}}</view>
+		<text class="num">共{{item.num?item.num:0}}件</text>
+		<view class="xinxitxt">收货信息：</view>
+		<text class="xinxi" user-select="true">{{item.name}}，{{item.phone}}，{{item.address}}</text>
+		<view class="bianhaotxt">订单编号：</view>
+		<text class="bianhao" user-select="true">{{item.id}}</text>
+		<view class="timetxt">下单时间：</view>
+		<text class="time">{{common.TimeToDate(item.xiadantime)}}</text>
+		<view class="peisongtxt">配送方式：</view>
+		<view class="peisong">快递 免邮</view>
+	</view>
+</view>
+
+
+
+<view class="tianxie">
+	<image src="{{userInfo.avatarUrl}}" class="inimg"></image>
+	<text class="nickname">{{userInfo.nickName}}</text>
+	<view class="pingfen">评分：</view>
+	<view class="star-pos">
+	<image class='stars' bindtap="changeColor" data-index='0' data-no="{{item}}" wx:for="{{stardata}}" wx:key="index"
+        src="{{flag>=item? '../../images/亮星星.png': '../../images/灰星星.png'}}" />
+	</view>
+
+
+
+    <view class="drawer_content">
+      <view class="grid">
+        <label class="title col-0">评价:</label>
+        <input class="input_base input_h30 col-1" bindblur="content" placeholder="请输入评价内容"></input>
+      </view>
+
+    </view>
+    <view class="btn_ok" bindtap="tijiao" data-statu="close">提交评价</view>
+
+  </view>

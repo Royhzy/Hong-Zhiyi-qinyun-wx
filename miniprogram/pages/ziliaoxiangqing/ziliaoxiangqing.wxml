@@ -1,0 +1,69 @@
+<view class="bg">
+    <view bindtap="previewchushiImg" wx:if="{{!source}}">
+      <image src='http://www.qinyunbs.com:8090/{{list.img_image}}' class="addbtn"/>
+    </view>
+    <view bindtap="previewImg" wx:if="{{source}}">
+        <image src='{{source}}'  class="addbtn"/>  
+    </view>
+</view>
+
+<view class="tianxie">
+    <view class="drawer_content">
+      <view class="grid">
+        <label class="title col-0">姓名:</label>
+        <input class="input_base input_h30 col-1" value="{{list.name}}" disabled="true"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">身份证:</label>
+        <input class="input_base input_h30 col-1" value="{{list.sfz}}" disabled="true"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">联系电话:</label>
+        <input class="input_base input_h30 col-1" bindblur="telephone" value="{{list.telephone}}"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">学校:</label>
+        <input class="input_base input_h30 col-1" bindblur="school" value="{{list.school}}"></input>
+      </view>
+      <view class="grid">
+          <label class="title col-0">学历:</label>
+          <input class="input_base input_h30 col-1" bindblur="educate" value="{{list.educate}}"></input>
+      </view>
+      <view class="grid">
+          <label class="title col-0">地区:</label>
+          <input class="input_base input_h30 col-1" bindblur="area" value="{{list.area}}"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">乐器:</label>
+          <input class="input_base input_h30 col-1" bindblur="instrument" value="{{list.instrument}}"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">教龄:</label>
+        <input class="input_base input_h30 col-1" bindblur="teachage" value="{{list.teachage}}"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">价格/节:</label>
+        <input class="input_base input_h30 col-1" bindblur="price" value="{{list.price}}"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">自我介绍:</label>
+        <input class="input_base input_h30 col-1" bindblur="introduce" value="{{list.introduce}}"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">照片墙:</label>
+
+        <view bindtap="uploadsfzimg" class="addsfzbtn" wx:if="{{!sfzsource&&!list.inimg_images}}">
+            <view class="scsfztxt">点击上传</view>
+        </view>
+        <view bindtap="previewchushisfzImg" wx:if="{{!sfzsource&&list.inimg_images}}">
+          <image src='http://www.qinyunbs.com:8090/{{list.inimg_images}}'  class="addsfzbtn"/>  
+        </view>
+        <view bindtap="previewsfzImg" wx:if="{{sfzsource}}">
+          <image src='{{sfzsource}}'  class="addsfzbtn"/>  
+        </view>
+
+      </view>
+    </view>
+    <view class="btn_ok" bindtap="tijiao" data-statu="close">提交修改</view>
+
+  </view>

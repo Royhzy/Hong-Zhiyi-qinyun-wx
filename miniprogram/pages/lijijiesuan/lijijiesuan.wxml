@@ -1,0 +1,25 @@
+<button bindtap='huoqudizhi' wx:if="{{!userName}}" class="huoqudizhi">获取收获地址</button>
+
+<view bindtap="huoqudizhi" class="dizhi" wx:if="{{userName}}">
+	<image src="/images/dizhi.png" class="dzimg"></image>
+	<view class="name">{{userName}}</view>
+	<view class="phone">{{Phone}}</view>
+	<view class="address">{{Address}}</view>
+</view>
+
+
+<view class="item">
+	<image src="http://www.qinyunbs.com:8090/{{goodslist.inimg_image}}" class="inimg"></image>
+	<text class="title">{{goodslist.title}}</text>
+	<view class="dianpu">店铺：{{goodslist.dianpu}}</view>
+	<view class="peisong">配送方式：快递 免邮</view>
+	<view class="price">¥{{goodslist.price}}</view>
+	<text class="num">共1件</text>
+</view>
+
+
+<view class="foot">
+	<view class="gong">共1件，合计：</view>
+	<view class="allmoney">¥{{goodslist.price}}</view>
+	<button class="jiesuan" bindtap="zhifu">提交订单</button>
+</view>

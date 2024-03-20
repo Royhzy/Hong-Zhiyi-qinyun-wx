@@ -1,0 +1,252 @@
+@charset "UTF-8";
+.scroll-wrapper {
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  background: #FFF;
+  height: 90rpx;
+  padding: 0 110rpx;
+  box-sizing: border-box;
+}
+
+/* 去掉滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.navigate-item {
+  width: 130rpx;
+  display: inline-block;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0 30rpx;
+  padding-right: 160rpx;
+}
+
+.names {
+  font-size: 28rpx;
+  color: #3c3c3c;
+}
+
+.names.active {
+  color: #5a7bff;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.currtline {
+  margin: -8rpx auto 0 auto;
+  width: 100rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+
+.currtline.active {
+  background: #5a7bff;
+  transition: all .3s;
+}
+
+swiper {
+  min-height: calc(100vh - 100rpx);
+}
+
+.swiper-item {
+  width: 100%;
+  padding: 32rpx;
+}
+
+scroll-view {
+  height: calc(100vh - 100rpx);
+}
+
+.item {
+  overflow: hidden;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 20rpx;
+  height: 430rpx;
+  background-color: white;
+  position: relative;
+  margin-top: 25rpx;
+  padding-top: 60rpx;
+}
+
+.item .inimg {
+  width: 190rpx;
+  height: 190rpx;
+  margin-top: 10rpx;
+  margin-left: 25rpx;
+  float: left;
+  position: absolute;
+  border-radius: 10rpx;
+}
+
+.item .title {
+  display: -webkit-box;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  /*文字隐藏后添加省略号*/
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  width: 454rpx;
+  height: 85rpx;
+  font-weight: bold;
+  margin-top: 4rpx;
+  margin-left: 240rpx;
+  position: absolute;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  /*控制显示行数*/
+}
+
+.item .dianpu {
+  font-size: 26rpx;
+  margin-top: -45rpx;
+  margin-left: 15rpx;
+  padding-right: 15rpx;
+  padding-left: 15rpx;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item .price {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #eb4f44;
+  float: left;
+  margin-top: 150rpx;
+  width: 100rpx;
+  margin-left: 240rpx;
+  position: absolute;
+}
+
+.item .num {
+  width: 93rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #979797;
+  margin-left: 600rpx;
+  margin-top: 158rpx;
+  height: 34rpx;
+  position: absolute;
+}
+
+.item .xinxitxt {
+  margin-top: 214rpx;
+  font-size: 26rpx;
+  float: left;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .xinxi {
+  margin-top: 214rpx;
+  margin-left: 170rpx;
+  padding-right: 30rpx;
+  font-size: 26rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.item .bianhaotxt {
+  margin-top: 290rpx;
+  font-size: 26rpx;
+  float: left;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .bianhao {
+  margin-top: 292rpx;
+  margin-left: 170rpx;
+  padding-right: 30rpx;
+  font-size: 26rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.item .timetxt {
+  margin-top: 334rpx;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .time {
+  margin-top: 334rpx;
+  margin-left: 170rpx;
+  padding-right: 30rpx;
+  font-size: 26rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.item .peisongtxt {
+  margin-top: 376rpx;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+  position: absolute;
+}
+
+.item .peisong {
+  margin-top: 376rpx;
+  font-size: 26rpx;
+  margin-left: 170rpx;
+  color: #979797;
+  position: absolute;
+}
+
+.item .querenshouhuo {
+  position: absolute;
+  margin-top: 350rpx;
+  margin-left: 510rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 28rpx;
+  white-space: nowrap;
+  font-size: 28rpx;
+  padding-left: 36rpx;
+  background-image: linear-gradient(90deg, #ff8036, #ffa46f);
+  color: white;
+  font-weight: lighter;
+  border-radius: 40rpx;
+  text-align: center;
+}
+
+.item .daipingjia {
+  position: absolute;
+  margin-top: 350rpx;
+  margin-left: 510rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 28rpx;
+  white-space: nowrap;
+  font-size: 28rpx;
+  padding-left: 36rpx;
+  background-color: #44bff0;
+  color: white;
+  font-weight: lighter;
+  border-radius: 40rpx;
+  text-align: center;
+}
+
+.item .wancheng {
+  position: absolute;
+  margin-top: 350rpx;
+  margin-left: 510rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 28rpx;
+  white-space: nowrap;
+  font-size: 28rpx;
+  padding-left: 22rpx;
+  background-color: #c0c0c0;
+  color: white;
+  font-weight: lighter;
+  border-radius: 40rpx;
+  text-align: center;
+}

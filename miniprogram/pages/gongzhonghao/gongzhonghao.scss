@@ -1,0 +1,27 @@
+page{
+	background-color: #fff;
+}
+
+.big{
+	height: 700rpx;
+	.ewm{
+		border: 1px solid  #DADADA;
+		border-radius: 30rpx;
+		width: 350rpx;
+		height: 350rpx;
+		margin-left: 198rpx;
+		margin-top: 100rpx;
+	}
+	.textti{
+		font-weight: bold;
+		margin-top: 20rpx;
+		font-size: 36rpx;
+		text-align: center;
+	}
+	.content{
+		color: #AEAEAE;
+		text-align: center;
+		margin-top: 20rpx;
+		font-weight: lighter;
+	}
+}

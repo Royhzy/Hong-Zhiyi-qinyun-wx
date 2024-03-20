@@ -1,72 +1,65 @@
-// pages/location/location.js
+let openid = ''
+let sfz=''
+let aa=''
+
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-        address:"泉州师范学院软件学院",
-        phone:"17705052595",
-        weixin:"hongzy1014",
-        markers:[
-            {
-                id:0,
-                name:"我家琴行",
-                address:"阿里巴巴",
-                longitude:118.584438,
-                latitude:24.910592,
-                width:30,
-                height:30
-            }]
+      status:'',
+    }, 
+
+    goziliao(){
+      wx.navigateTo({
+        url: '/pages/ziliaoxiangqing/ziliaoxiangqing?sfz='+sfz,
+      })
     },
 
-    clickMap(e)
-    {
-        console.log(e.currentTarget.dataset.marker)
-        var marker=e.currentTarget.dataset.marker
-        wx.getLocation({
-            type: 'wgs84',
-            success (res) {
-                wx.openLocation({
-                  latitude: marker.latitude,
-                  longitude: marker.longitude,
-                  name:marker.name,
-                  address:marker.address,
-                  scale:18
-                })
-            },
-            fail(res){
-                console.log("获取位置失败",res)
-                wx.showModal({
-                  title:"需要授权",
-                  "content":"需要获取信息，才可以实现导航，点击去设置开启位置权限",
-                  "confirmText":"去设置",
-                  success(res){
-                      console.log("弹窗点击",res)
-                      if(res.confirm){
-                          wx.openSetting()
-                      }
-                  }
-                })
-            }
-        })
+    gokebiao(){
+      wx.navigateTo({
+        url: '/pages/jskebiao/jskebiao?sfz='+sfz,
+      })
     },
-    callPhone(e){
-        wx.makePhoneCall({
-          phoneNumber: e.currentTarget.dataset.phone,
-        })
+    
+    gokecheng(){
+      wx.navigateTo({
+        url: '/pages/jskecheng/jskecheng?currentTab=0&sfz='+sfz,
+      }) 
     },
-    copyWeChat(event){
-        wx.setClipboardData({
-          data: event.currentTarget.dataset.weixin,
-        })
+
+    godaishang(){
+      wx.navigateTo({
+        url: '/pages/jskecheng/jskecheng?currentTab=1&sfz='+sfz,
+      }) 
     },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+      openid= wx.getStorageSync('openid')
+      var that=this;
+      wx.request({
+        url: 'http://www.qinyunbs.com:8090/wxapi/Renzheng/chaxunrenzheng?openid='+openid,
+        success: function (res) {
+            if(res.data.length){
+              that.setData({
+                status:res.data[0].status,
+                reason:res.data[0].reason
+              })
+              sfz=res.data[0].sfz
+              wx.request({
+                url: 'http://www.qinyunbs.com:8090/wxapi/Teacher/sfzQueryDetailfun?sfz='+sfz,
+                success: function (res) {
+                    that.setData({ 
+                        list: res.data,
+                    })
+                }
+              })
+            }
+        }
+      })
     },
+
+
 
     /**
      * 生命周期函数--监听页面初次渲染完成

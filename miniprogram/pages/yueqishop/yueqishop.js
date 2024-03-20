@@ -1,7 +1,6 @@
-const db=wx.cloud.database();
-const cmd=db.command;
 var key= '';
-let user=''
+let user='';
+var priceSo=true;
 
 Page({
 
@@ -64,9 +63,6 @@ Page({
       }
   },
 
-
-
-
     getKey(e){
         this.setData({
             key:e.detail.value
@@ -76,33 +72,29 @@ Page({
         wx.showLoading({
             title: '加载中...',
         })
-
         key=this.data.key;
         if(key){
-            console.log('可以执行搜索')
-            wx.cloud.callFunction({
-                name:'fenye',
-                data:{
-                    key:key,
-                    type:"getSearchPiano"
-                }
-            }).then(res=>{
-                    wx.hideLoading()
-                    console.log('调用成功',res.result.data)
-       
-                if(res.result.data&&res.result.data.length==0)
+            var that = this
+            wx.request({
+                url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/querykey?catogory=钢琴&key='+key,
+                success: function (res) {
+                    console.log('调用',res.data)    
+                if(res.data.code==400)
                 {
+                    wx.hideLoading()
                     wx.showToast({
                         icon:'none',
                         title:'没找到关键词相近钢琴'
                     })
                 }
                 else{
-                    this.setData({
-                        list:res.result.data
+                    that.setData({
+                        list: res.data
                     })
+                    wx.hideLoading()
                 }
-            })
+            }
+        })
         }
         else{
             wx.showToast({
@@ -118,33 +110,22 @@ Page({
     },
 
     getList(){                         //获取下拉数据
-        var len=this.data.list.length
-        console.log('当前list的长度',len)
-
-        wx.cloud.callFunction({
-            name:'fenye',
-            data:{
-                len:len,
-                pageNum:20,
-                type:"getAllPiano"
+        var that = this
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/queryfun?catogory=钢琴',
+            success: function (res) {
+                if(res.data.length>0){
+                    that.setData({
+                        list:res.data
+                    })
+                }
             }
-        }).then(res=>{
-            console.log('调用成功',res.result.data)
-            var dataList=res.result.data
-            this.setData({
-                list:this.data.list.concat(dataList)
-            })
-        }).catch(res=>{
-            console.log('调用失败',res)
         })
     },
 
-  touchBottom(){                 //scrollview触底
-    this.getList()
-  },
-
   //加入购物车
   async addgouwuche(e){
+    let openid= wx.getStorageSync('openid')
     if(user==''){
         wx.getSetting({
             success (res) {
@@ -156,7 +137,28 @@ Page({
                       //把用户信息缓存到本地
                       wx.setStorageSync('user',user)
 
-                      const pages = getCurrentPages()
+                     // 获取code凭证
+                      wx.login({
+                        success: (res) => {
+                         // 传递code凭证
+                        wx.request({
+                            url: `https://api.weixin.qq.com/sns/jscode2session`,
+                            method:'GET',
+                            data:{
+                                appid:'wx57a86f1615a36adf',
+                                js_code:res.code,
+                                secret:'948537fb459c2037c342f6ddc87b23e0',
+                                grant_type:'authorization_code'
+                            },
+                            success: res => {
+                              console.log('存入的openid：'+res.data.openid)
+                              wx.setStorageSync('openid',res.data.openid)
+                            }
+                          })
+                        },
+                    })
+                    
+                      const pages = getCurrentPages()            //刷新页面
                       const perpage = pages[pages.length - 1]
                       perpage.onLoad()  
                     },
@@ -169,79 +171,191 @@ Page({
     }
     else{
         let {item}=e.currentTarget.dataset
-        try{
-            let res=await db.collection("carts").doc(item._id).get()
-            console.log('有值')
-            await db.collection("carts").doc(item._id).update({
-                data:{
-                    num:cmd.inc(1)
+        var that = this
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Cart/getlength?goods_id='+item.id+'&openid='+openid,
+            success: function (res) {
+                if(res.data.length>0){
+                    console.log("有值")
+                    //num+1
+                    wx.request({
+                        url: 'http://www.qinyunbs.com:8090/wxapi/Cart/addcartnum?goods_id='+item.id+'&openid='+openid,
+                        success: function (res) {
+                            setTimeout(() => {
+                                wx.showToast({
+                                  title: '添加购物车成功',
+                                  icon: "success",
+                                });
+                                setTimeout(() => {
+                                  wx.hideToast();
+                                }, 500)
+                              }, 0);
+                        }
+                    }) 
+                }else{
+                    let openid= wx.getStorageSync('openid')
+                    console.log("没有值")
+                    var that = this
+                    wx.request({
+                        url: 'http://www.qinyunbs.com:8090/wxapi/Cart/addcart',
+                        method:'POST',
+                        data:{   //data里面放携带参数
+                          "openid":openid,
+                          "goodsid":item.id,
+                          "inimg":item.inimg_image,
+                          "price":item.price,
+                          "title":item.title,
+                          "dianpu":item.dianpu,
+                          "num":1,
+                          "selected":1,
+                        },
+                        success: function (res) {
+                            setTimeout(() => {
+                                wx.showToast({
+                                  title: '添加购物车成功',
+                                  icon: "success",
+                                });
+                                setTimeout(() => {
+                                  wx.hideToast();
+                                }, 500)
+                              }, 0);
+                        }
+                    })
                 }
-            })
-            setTimeout(() => {
-                wx.showToast({
-                  title: '添加购物车成功',
-                  icon: "success",
-                });
-                setTimeout(() => {
-                  wx.hideToast();
-                }, 500)
-              }, 0);
-        }catch(err){
-            console.log("没有值")
-            
-            await db.collection("carts").add({
-                data:{
-                    _id:item._id,
-                    inimg:item.inimg,
-                    price:item.price,
-                    title:item.title,
-                    dianpu:item.dianpu,
-                    place:item.place,
-                    sale:item.sale,
-                    num:1,
-                    selected:false
+            }
+        })  
+    }
+  },
+
+
+      
+  xiaoliang(){             //销量按钮（只有降序）
+    key=this.data.key;
+    if(key){
+        var that = this
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/keySaleSort?catogory=钢琴&key='+key,
+            success: function (res) {
+                that.setData({ 
+                    list: res.data 
+                })
+            }
+        })  
+    }
+    else{
+        var that = this
+        wx.request({
+            url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/salesort?catogory=钢琴',
+            success: function (res) {
+                that.setData({ 
+                    list: res.data 
+                })
+            }
+        })  
+    }
+  },
+
+  jiage(){              //价格按钮
+    key=this.data.key;
+    if(priceSo==true){
+        if(key){
+            var that = this
+            wx.request({
+                url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/keyPriceSort?catogory=钢琴&key='+key+'&sc=desc',
+                success: function (res) {
+                    that.setData({ 
+                        list: res.data 
+                    })
                 }
-            })
-            setTimeout(() => {
-                wx.showToast({
-                  title: '添加购物车成功',
-                  icon: "success",
-                });
-                setTimeout(() => {
-                  wx.hideToast();
-                }, 500)
-              }, 0);
+            })   
+        }
+        else{
+            var that = this
+            wx.request({
+                url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/pricesort?catogory=钢琴&sc=desc',
+                success: function (res) {
+                    that.setData({ 
+                        list: res.data 
+                    })
+                }
+            }) 
         }
     }
-
+    else if(priceSo==false){
+        if(key){
+            var that = this
+            wx.request({
+                url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/keyPriceSort?catogory=钢琴&key='+key+'&sc=asc',
+                success: function (res) {
+                    that.setData({ 
+                        list: res.data 
+                    })
+                }
+            })   
+        }
+        else{
+            var that = this
+            wx.request({
+                url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/pricesort?catogory=钢琴&sc=asc',
+                success: function (res) {
+                    that.setData({ 
+                        list: res.data 
+                    })
+                }
+            }) 
+        }    
+    }
+    priceSo=!priceSo
   },
-
-//   xiaoliang(){             //销量按钮
-
-//   },
-
-  selectAll(){           //全部按钮
+  selectAll(){           //综合按钮
     this.getList()
   },
+
+  gopiano(){
+    wx.redirectTo({
+        url: '/pages/yueqishop/yueqishop',
+      })
+  },
+  goviollin(){
+    wx.redirectTo({
+        url: '/pages/violinshop/violinshop',
+      })
+  },
+  goguitar(){
+    wx.redirectTo({
+        url: '/pages/guitarshop/guitarshop',
+      })
+  },
+  goguzheng(){
+    wx.redirectTo({
+        url: '/pages/guzhengrshop/guzhengrshop',
+      })
+  },
+  gopipa(){
+    wx.redirectTo({
+        url: '/pages/pipashop/pipashop',
+      })
+  },
+  goerhu(){
+    wx.redirectTo({
+        url: '/pages/erhushop/erhushop',
+      })
+  },
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
         this.getList();
 
-        //计算scroll-view高度
-        let windowHeight = wx.getSystemInfoSync().windowHeight // 屏幕的高度
-        let windowWidth = wx.getSystemInfoSync().windowWidth // 屏幕的宽度
-        let ratio = 750 / windowWidth;
-        this.setData({
-            scroll_height: (windowHeight - 140) * ratio
-        })
-
         user= wx.getStorageSync('user')
-        console.log('进入小程序loginDetail页面获取缓存',user)
         this.setData({
           userInfo:user
         })
+
+        let openid= wx.getStorageSync('openid')
   },
 
   /**

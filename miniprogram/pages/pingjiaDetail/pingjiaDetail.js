@@ -1,17 +1,58 @@
-// pages/pingjiaDetail/pingjiaDetail.js
+var id='';
+var openid='';
+var dangqianList='';
+var myName='';
+var myPhone='';
+var myAddress='';
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        userName: '',
+        Phone: '',
+        Address: '',
+        showAddress: true,
+        addAddress: false,
+        goodslist:[],
+        totalMoney:0,
+        totalNum:0,
+        stardata: [1, 2, 3, 4, 5],
     },
+
+    getList(){                         
+        var that=this;
+        wx.request({                      //获取商品
+            url: 'http://www.qinyunbs.com:8090/wxapi/Yueqi/queryDetailfun?id='+id,
+            success: function (res) {
+                that.setData({ 
+                    goodslist:res.data 
+                })
+                dangqianList=res.data
+            }
+        })
+
+        wx.request({          //获取评价
+            url: 'http://www.qinyunbs.com:8090/wxapi/Pingjia/querypingjia?goods_id='+id,
+            success: function (res) {
+                that.setData({ 
+                    pingjialist: res.data
+                })
+            }
+          })
+    },
+
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        id=options.id;
+
+        let openid= wx.getStorageSync('openid')
+        this.getList()
 
     },
 
@@ -25,7 +66,7 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow() {
+    onShow() {    
 
     },
 

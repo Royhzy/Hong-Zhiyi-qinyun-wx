@@ -1,0 +1,262 @@
+@charset "UTF-8";
+.scroll-wrapper {
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  background: #FFF;
+  height: 90rpx;
+  padding: 0 110rpx;
+  box-sizing: border-box;
+}
+
+/* 去掉滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.navigate-item {
+  width: 130rpx;
+  display: inline-block;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0 30rpx;
+  padding-right: 160rpx;
+}
+
+.names {
+  font-size: 28rpx;
+  color: #3c3c3c;
+}
+
+.names.active {
+  color: #5a7bff;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.currtline {
+  margin: -8rpx auto 0 auto;
+  width: 100rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+
+.currtline.active {
+  background: #5a7bff;
+  transition: all .3s;
+}
+
+swiper {
+  min-height: calc(100vh - 100rpx);
+}
+
+.swiper-item {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+scroll-view {
+  height: calc(100vh - 100rpx);
+}
+
+.item2 {
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 40rpx;
+  height: 430rpx;
+  background-color: white;
+  position: relative;
+  margin-top: 25rpx;
+}
+
+.item2 .dingdantxt {
+  font-size: 26rpx;
+  float: left;
+  padding-left: 10rpx;
+  position: absolute;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+
+.item2 .dingdan {
+  font-size: 26rpx;
+  color: #a0a0a0;
+  margin-left: 130rpx;
+  position: absolute;
+  margin-top: 10rpx;
+}
+
+.item2 .line {
+  margin-left: 20rpx;
+  width: 670rpx;
+  position: absolute;
+  margin-top: 52rpx;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.item2 .img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 60px;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  float: left;
+  position: absolute;
+  background-color: #e6e6e6;
+}
+
+.item2 .img .txt {
+  font-size: 42rpx;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+  margin-left: 40rpx;
+  padding-top: 72rpx;
+  font-family: webfont;
+}
+
+.item2 .name {
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-top: 75rpx;
+  margin-left: 282rpx;
+  position: absolute;
+}
+
+.item2 .instrument {
+  font-size: 26rpx;
+  margin-top: 165rpx;
+  margin-left: 280rpx;
+  width: 120rpx;
+  text-align: center;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  position: absolute;
+  background-color: #e7e7e7;
+  border-radius: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000000;
+  font-weight: bold;
+}
+
+.item2 .area {
+  font-size: 26rpx;
+  margin-top: 165rpx;
+  margin-left: 420rpx;
+  padding-right: 25rpx;
+  padding-left: 25rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  position: absolute;
+  border-radius: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #e7e7e7;
+  color: #3c3c3c;
+  font-weight: bold;
+}
+
+.item2 .jie {
+  font-size: 38rpx;
+  color: #eb4f44;
+  float: left;
+  margin-top: 220rpx;
+  position: relative;
+  margin-left: 286rpx;
+  font-weight: bold;
+}
+
+.item2 .zhifu {
+  font-size: 26rpx;
+  margin-top: 225rpx;
+  margin-left: 420rpx;
+  width: 175rpx;
+  text-align: center;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  position: absolute;
+  background-image: linear-gradient(90deg, #ff8036, #ffa46f);
+  border-radius: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  font-weight: lighter;
+  font-size: 28rpx;
+  height: 40rpx;
+}
+
+.item2 .dsk {
+  font-size: 26rpx;
+  margin-top: 225rpx;
+  margin-left: 420rpx;
+  width: 175rpx;
+  text-align: center;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  position: absolute;
+  background-color: #59ee2b;
+  border-radius: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  font-weight: lighter;
+  font-size: 28rpx;
+  height: 40rpx;
+}
+
+.item2 .wczhifu {
+  font-size: 26rpx;
+  margin-top: 225rpx;
+  margin-left: 420rpx;
+  width: 175rpx;
+  text-align: center;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  position: absolute;
+  border-radius: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #e7e7e7;
+  color: black;
+  font-weight: lighter;
+  font-size: 28rpx;
+  height: 40rpx;
+}
+
+.item2 .stuid {
+  font-size: 26rpx;
+  float: left;
+  padding-left: 10rpx;
+  position: absolute;
+  margin-top: 300rpx;
+  margin-left: 20rpx;
+  color: #3c3c3c;
+}
+
+.item2 .yuyuetime {
+  font-size: 26rpx;
+  float: left;
+  padding-left: 10rpx;
+  position: absolute;
+  margin-top: 336rpx;
+  margin-left: 20rpx;
+  color: #3c3c3c;
+}
+
+.item2 .shangketime {
+  font-size: 26rpx;
+  float: left;
+  padding-left: 10rpx;
+  position: absolute;
+  margin-top: 372rpx;
+  margin-left: 20rpx;
+  color: #3c3c3c;
+}

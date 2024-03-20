@@ -2,43 +2,65 @@
     <!--未登录-->
 	<view class="bg" wx:if="{{!userInfo}}">		
 	    <image src="/images/morentouxiang.jpg" class="img"></image>
-		<button class="weidenglu" type="default" bindtap="loadByWechat">微信快捷登录</button>
+		<button class="weidenglu" bindtap="loadByWechat" hover-class="wdlafter">点我登录</button>
 	</view>
 	<!--已登录-->
 	<view wx:else class="bg" >
 		<image src="{{userInfo.avatarUrl}}" class="img"></image>
 		<text class="nickName" >{{userInfo.nickName}}</text>
 	</view>
-	<!--下半部分-->
-	<view class="nav4">
-		<navigator class="nav4_item" url="/pages/location/location">
-			<icon class="iconfont icon-xunzhang">
-			    <text>我的订单</text>
-				<view class="line"></view>
+	<!--我的服务-->
+	<view class="fuwu">
+		<view class="fuwutext">我的服务</view>
+		<view bindtap="goDingdan" class="dingdanbig">
+			<icon class="iconfontwode icon-wodedingdan">
+			    <view class="dingdantxt">我的订单</view>
+			</icon>
+		</view>
+		<view bindtap="goYuyue" class="gouwuchebig">
+			<icon class="iconfontwode icon-gouwuche3">
+			    <view class="gouwuchetxt">预约课程</view>
+			</icon>
+		</view>
+		<view bindtap="goGuanzhu" class="guanzhubig">
+			<icon class="iconfontwode icon-wodeguanzhu">
+			    <view class="guanzhutxt">关注老师</view>
+			</icon>
+		</view>
+		<view bindtap="gorenzheng" class="yuyuebig">
+			<icon class="iconfontwode icon-w_laoshi ">
+			    <view class="yuyuetxt">教师认证</view>
+			</icon>
+		</view>
+	</view>
+
+
+	<view class="more">
+		<view class="fuwutext">更多</view>
+
+		<button  class="kefubig" open-type="contact" hover-class="wdlafter">
+			<icon class="iconfontwode icon-kefu2">
+			    <text class="kefutxt">联系客服</text>
+			</icon>
+		</button>
+
+		<button  class="fankuibig" open-type="feedback" hover-class="wdlafter">
+			<icon class="iconfontwode .icon-wodefankui">
+			    <text class="fankuitxt">意见反馈</text>
+			</icon>
+		</button>
+
+		<navigator class="gzhbig" url="/pages/gongzhonghao/gongzhonghao">
+			<icon class="iconfontwode icon-weixingongzhonghao">
+			    <text class="gzhtxt">公众号</text>
 			</icon>
 		</navigator>
-		<navigator class="nav4_item" url="/pages/guanzhu/guanzhu">
-			<icon class="iconfont icon-ziliaoku">
-			    <text>关注老师</text>
-				<view class="line"></view>
+
+		<navigator class="guanyubig" url="/pages/guanyuwomen/guanyuwomen">
+			<icon class="iconfontwode icon-guanyuwomen">
+			    <text class="guanyutxt">关于我们</text>
 			</icon>
 		</navigator>
-		<view class="nav4_bt">
-			<button class="contact" open-type="contact">
-			<icon class="iconfont icon-lianxi">
-			    <text>联系客服</text>
-				<view class="line2"></view>
-			</icon>
-			</button>
-		</view>
-		<view class="nav4_bt">
-			<button class="contact" open-type="feedback">
-			<icon class="iconfont icon-kaojizhongxin">
-			    <text>意见反馈</text>
-				<view class="line2"></view>
-			</icon>
-			</button>
-		</view>
 	</view>
 </view>
 

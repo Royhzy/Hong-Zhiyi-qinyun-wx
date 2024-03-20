@@ -1,2 +1,56 @@
-<!--pages/pingjiaDetail/pingjiaDetail.wxml-->
-<text>pages/pingjiaDetail/pingjiaDetail.wxml</text>
+<wxs src="../../common.wxs" module="common"></wxs>
+<view bindtap="huoqudizhi" class="dizhi" wx:if="{{userName}}">
+	<image src="/images/dizhi.png" class="dzimg"></image>
+	<view class="name">{{userName}}</view>
+	<view class="phone">{{Phone}}</view>
+	<view class="address">{{Address}}</view>
+</view>
+
+
+<view class="item">
+	<image src="http://www.qinyunbs.com:8090/{{goodslist.inimg_image}}" class="inimg"></image>
+	<text class="title">{{goodslist.title}}</text>
+	<view class="dianpu">店铺：{{goodslist.dianpu}}</view>
+	<view class="price">¥{{goodslist.price}}</view>
+	<text class="num">销量：{{goodslist.sale}}</text>
+</view>
+
+<view class="ckpj">
+	<view class="box3">
+		<view class="tit" data-id="{{pingjialist[0].goodsid}}">评价（{{pingjialist.length}}）</view>
+
+		<view class="pjitem" wx:for="{{pingjialist}}" data-item="{{item}}" wx:key="list">
+			<image src="{{item.avatarUrl}}" class="inimg"></image>
+			<text class="nickname">{{item.nickName}}：</text>
+			<text class="neirong">{{item.neirong}}</text>
+
+			<view class="star-pos" wx:if="{{item.xing==1}}">
+				<image  class='stars' data-index='0' data-no="{{item}}" wx:for="{{stardata}}" wx:key="index"
+        src="{{1>=item? '../../images/亮星星.png': '../../images/灰星星.png'}}" />
+			</view>
+
+			<view class="star-pos" wx:if="{{item.xing==2}}">
+				<image  class='stars' data-index='0' data-no="{{item}}" wx:for="{{stardata}}" wx:key="index"
+        src="{{2>=item? '../../images/亮星星.png': '../../images/灰星星.png'}}" />
+			</view>
+
+			<view class="star-pos" wx:if="{{item.xing==3}}">
+				<image  class='stars' data-index='0' data-no="{{item}}" wx:for="{{stardata}}" wx:key="index"
+        src="{{3>=item? '../../images/亮星星.png': '../../images/灰星星.png'}}" />
+			</view>
+
+			<view class="star-pos" wx:if="{{item.xing==4}}">
+				<image  class='stars' data-index='0' data-no="{{item}}" wx:for="{{stardata}}" wx:key="index"
+        src="{{4>=item? '../../images/亮星星.png': '../../images/灰星星.png'}}" />
+			</view>
+
+			<view class="star-pos" wx:if="{{item.xing==5}}">
+				<image  class='stars' data-index='0' data-no="{{item}}" wx:for="{{stardata}}" wx:key="index"
+        src="{{5>=item? '../../images/亮星星.png': '../../images/灰星星.png'}}" />
+			</view>
+
+			<text class="time">{{common.TimeToDate(item.pingjia_time)}}</text>
+		</view>
+
+	</view>
+</view>

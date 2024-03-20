@@ -1,3 +1,10 @@
+@import './font_yueqi/iconfont.wxss';        /*乐器*/
+@import './font_daohang/iconfont.wxss';       /*中间导航*/
+@import './font_gouwulan/iconfont.wxss';       /*底部购物栏*/
+@import './font_wode/iconfont.wxss';       /*我的界面*/
+@import './font_4436146_uqjnvjvq27s/iconfont.wxss';  /*教师主页*/
+
+
 /**app.wxss**/
 .container {
   display: flex;
@@ -26,92 +33,7 @@ page {
   justify-content: flex-start;
 }
 
-	/*导航栏*/
-@font-face {
-  font-family: "iconfont"; /* Project id 3168139 */
-  src: url('https://at.alicdn.com/t/font_3168139_aal1z6njr3o.woff2?t=1643811806670') format('woff2'),
-       url('https://at.alicdn.com/t/font_3168139_aal1z6njr3o.woff?t=1643811806670') format('woff'),
-       url('https://at.alicdn.com/t/font_3168139_aal1z6njr3o.ttf?t=1643811806670') format('truetype');  
-}
 
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-.icon-jichuxinxi:before {
-  content: "\e60e";
-  color: #fff;
-  font-size: 45rpx;
-}
-
-.icon-gouwuche:before {
-  content: "\e61d";
-  color: #fff;
-  font-size: 45rpx;
-}
-
-.icon-shengchanshang:before {
-  content: "\e623";
-  color: #fff;
-  font-size: 45rpx;
-}	
-
-	/*乐器*/
-	
-	@font-face {
-	  font-family: "iconfont"; /* Project id 3170929 */
-	  src: url('https://at.alicdn.com/t/font_3170929_8zcl75c8s96.woff2?t=1644227145670') format('woff2'),
-	       url('https://at.alicdn.com/t/font_3170929_8zcl75c8s96.woff?t=1644227145670') format('woff'),
-	       url('https://at.alicdn.com/t/font_3170929_8zcl75c8s96.ttf?t=1644227145670') format('truetype');
-	}
-	.iconfont {
-	  font-family: "iconfont" !important;
-	  font-size: 16px;
-	  font-style: normal;
-	  -webkit-font-smoothing: antialiased;
-	  -moz-osx-font-smoothing: grayscale;
-	}
-	
-	.icon-violin:before {
-	  content: "\e602";
-	  display: flex;
-	  margin-left: 35rpx;
-	}
-	
-	.icon-piano:before {
-	  content: "\e600";
-	  display: flex;
-	  margin-left: 35rpx;
-	}
-	
-	.icon-jita:before {
-	  content: "\e601";
-	  display: flex;
-	  margin-left: 35rpx;
-	}
-	
-	.icon-jiazigu:before {
-	  content: "\e651";
-	  display: flex;
-	  margin-left: 35rpx;
-	}
-	
-	.icon-aoli-guzheng:before {
-	  content: "\e626";
-	  display: flex;
-	  margin-left: 35rpx;
-	}
-	
-	.icon-aoli-erhu:before {
-	  content: "\e628";
-	  display: flex;
-	  margin-left: 35rpx;
-	}
 
 
 		/*个人中心图标*/
@@ -145,4 +67,11 @@ page {
 		  .icon-kaojizhongxin:before {
 			content: "\e686";
 		  }
+	  
+		  
+
+
+
+
+	  
 	  

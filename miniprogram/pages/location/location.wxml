@@ -1,5 +1,56 @@
-<map class="map" markers="{{markers}}" bindmarkertap="clickMap" longitude="118.584438" latitude="24.910592" show-location  scale="16"/>
+<view style="background-image: url('https://www.freeimg.cn/i/2024/02/16/65cf1615bfa22.png');" class="tiimg">
+</view>
+<view wx:if="{{status==1}}">             <!--待认证-->
+	<view class="header1">
+		<view class="txt1">您的申请认证已提交,暂未审核！</view>
+		<view class="txt2">(若长时间未审核通过请联系客服)</view>
+	</view>
+</view>
 
-<view>地址:{{address}}</view>
-<view bindtap="callPhone" data-phone="{{phone}}">电话:{{phone}}（点击拨打）</view>
-<view bindtap="copyWeChat" data-weixin="{{weixin}}">微信:{{weixin}}（点击复制）</view>
+<view wx:if="{{status==2}}">              <!--已认证，进入教师页-->
+	<view class="header">
+		<image src="http://www.qinyunbs.com:8090/{{list.img_image}}" class="img"></image>
+		<view class="name">
+			<text style="color: rgb(100, 130, 185); font-weight: 600;">{{list.name}}</text>
+			<text style="font-size: 36rpx; margin-left: 10rpx;">老师，欢迎您</text>
+		</view>
+		<view class="instrument">教学乐器：{{list.instrument}}</view>
+		<view class="area">所在地区：{{list.area}}</view>
+	</view>
+	<view class="mid">
+		<view class="nav2">       
+			<view class="nav2_item" bindtap="goziliao" style="background-image:linear-gradient(90deg,#454648,#626A7C);">
+				<icon class="iconfont .icon-shenfenzhenghao" style="font-size:76rpx;color:#fff;line-height:160rpx;margin-left: 20rpx;margin-top: 10rpx;"></icon>
+				<text class="title1">资料详情</text>
+			</view>
+			<view class="nav2_item2" bindtap="gokebiao" style="background-image: linear-gradient(90deg,#3399FF,#3BC9F9);">
+				<icon class="iconfont .icon-bianjiziliao" style="font-size:70rpx;color:#fff;line-height:160rpx;margin-left: 36rpx;margin-top: 10rpx;"></icon>
+				<text class="title1">修改课表</text>
+			</view>
+		</view>
+		<view class="nav2">
+			<view class="nav2_item" bindtap="gokecheng" style="background-image: linear-gradient(90deg,#FF813F,#FFA94C);">
+				<icon class="iconfont .icon-zuotijilu" style="font-size:84rpx;color:#fff;line-height:160rpx;margin-left: 40rpx;margin-top: 14rpx;"></icon>
+				<text class="title1">课程记录</text>
+			</view>
+			<view class="nav2_item2" bindtap="godaishang" style="background-image:linear-gradient(90deg,#FD5772,#FD918E);">
+				<icon class="iconfont .icon-peixunjihua" style="font-size:78rpx;color:#fff;line-height:160rpx;margin-left: 40rpx;margin-top: 14rpx;"></icon>
+				<text class="title1">待上课程</text>
+			</view>
+		</view>	
+	</view>
+</view>
+
+<view wx:if="{{status==3}}">             <!--待认证-->
+	<view class="header1">
+		<view class="txt1">您的申请认证不通过！</view>
+		<view class="txt2">理由：{{reason}}</view>
+	</view>
+</view>
+
+
+<view wx:if="{{!status}}">                <!--未认证-->
+	<view class="header2">
+		<view class="txt2">此页面仅对本平台认证教师开放！</view>
+	</view>
+</view>

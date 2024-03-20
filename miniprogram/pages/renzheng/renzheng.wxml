@@ -1,0 +1,48 @@
+<view class="bg">
+    <view bindtap="uploadimg" class="addbtn" wx:if="{{!source}}">
+        <view class="sctxt">点击上传头像</view>
+    </view>
+    <view bindtap="previewImg">
+        <image src='{{source}}'  class="addbtn"/>  
+    </view>
+</view>
+
+<view class="tianxie">
+    <view class="drawer_content">
+      <view class="grid">
+        <label class="title col-0">姓名:</label>
+        <input class="input_base input_h30 col-1" bindblur="name" placeholder="请输入姓名"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">身份证:</label>
+        <input class="input_base input_h30 col-1" bindblur="sfz" placeholder="请输入身份证"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">联系电话:</label>
+        <input class="input_base input_h30 col-1" bindblur="telephone" placeholder="请输入联系电话"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">毕业学校:</label>
+        <input class="input_base input_h30 col-1" bindblur="school" placeholder="请输入在读/毕业学校"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">乐器:</label>
+        <input class="input_base input_h30 col-1" bindblur="instrument" placeholder="请输入教学乐器"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">学历:</label>
+        <input class="input_base input_h30 col-1" bindblur="educate" placeholder="请输入学历"></input>
+      </view>
+      <view class="grid">
+        <label class="title col-0">身份证照:</label>
+        <view bindtap="uploadsfzimg" class="addsfzbtn" wx:if="{{!sfzsource}}">
+            <view class="scsfztxt">点击上传</view>
+        </view>
+        <view bindtap="previewsfzImg" wx:if="{{sfzsource}}">
+          <image src='{{sfzsource}}'  class="addsfzbtn"/>  
+        </view>
+      </view>
+    </view>
+    <view class="btn_ok" bindtap="tijiao" data-statu="close">提交认证申请</view>
+
+  </view>

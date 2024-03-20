@@ -1,0 +1,24 @@
+<view class="pop7">
+  <view class="pop7_title">
+    <text space="ensp"> 添加图片</text>
+  </view>
+  <view class="addbtn">
+    <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+      <image class='weui-uploader_img ' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+      <image src='../../images/jianhao.png' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></image>
+    </view>
+    <view class="addphoto" bindtap="add_photo">
+      <view class="addtext">+</view>
+    </view>
+  </view>
+</view>
+
+
+<view>
+ 
+<button bindtap="uploadimg">点击选择上传图</button>
+ 
+</view>
+<image src='{{source}}' style='width:600rpx; height:600rpx' />
+
+

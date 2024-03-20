@@ -1,0 +1,122 @@
+<!-- 改为课程表 -->
+
+<view class="head">
+  <view class="head-left flex-column j_c">
+    <image src="http://www.qinyunbs.com:8090/{{nlist.img_image}}" class="head-icon" />
+    <text class="head-left-text one">{{nlist.name}}</text>
+    <text class="head-left-text two">{{nlist.instrument}}</text>
+
+  </view>
+  <view class="head-right">
+    <view class="flex-column j_c" wx:for="{{weekList}}" wx:key="list">
+      <text class="head-week {{item.isCurr && 'head-right-curr'}}">{{item.week}}</text>
+      <text class="day {{item.isCurr && 'head-right-curr'}}">{{item.isCurr?'今天':item.day}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="container-left">
+    <block wx:for="{{time.one}}" wx:key="list">
+      <view>
+        <text class="con-title">{{item.index}}</text>
+        <text class="start">{{item.timeStart}}</text>
+        <text class="end">{{item.timeEnd}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="container-right">
+    <view>
+    	<view class="con-item" wx:for="{{schedule.one}}" wx:key="list" data-item="{{item}}">
+        	<text class="con-item-txt line_ellipsis" wx:if="{{schedule.one[index].type==1}}">可约</text>
+    	</view>
+ 	</view>
+
+	 <view>
+    <view class="con-item" wx:for="{{schedule.two}}" wx:key="list" data-item="{{item}}">
+        	<text class="con-item-txt line_ellipsis" wx:if="{{schedule.two[index].type==1}}">可约</text>
+    </view>
+ 	</view>
+
+  </view>
+</view>
+
+
+<view class="container flex-row mb20">
+  <view class="container-left left1">
+    <block wx:for="{{time.two}}" wx:key="list">
+      <view class="flex-column j_c">
+        <text class="con-title">{{item.index}}</text>
+        <text class="start">{{item.timeStart}}</text>
+        <text class="end">{{item.timeEnd}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="container-right">
+    <view>
+      <view class="con-item" wx:for="{{schedule.three}}" wx:key="list" data-item="{{item}}">
+        	<text class="con-item-txt line_ellipsis" wx:if="{{schedule.three[index].type==1}}">可约</text>
+     </view>
+ 	</view>
+
+	 <view>
+    <view class="con-item" wx:for="{{schedule.four}}" wx:key="list" data-item="{{item}}">
+        	<text class="con-item-txt line_ellipsis" wx:if="{{schedule.four[index].type==1}}">可约</text>
+    </view>
+ 	</view>
+
+
+  </view>
+</view>
+
+
+<view class="container flex-row">
+  <view class="container-left left1">
+    <block wx:for="{{time.three}}" wx:key="list">
+      <view class="flex-column j_c">
+        <text class="con-title">{{item.index}}</text>
+        <text class="start">{{item.timeStart}}</text>
+        <text class="end">{{item.timeEnd}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="container-right">
+    <view>
+      <view class="con-item" wx:for="{{schedule.five}}" wx:key="list" data-item="{{item}}">
+        	<text class="con-item-txt line_ellipsis" wx:if="{{schedule.five[index].type==1}}">可约</text>
+    </view>
+ 	</view>
+
+	 <view>
+    <view class="con-item" wx:for="{{schedule.six}}" wx:key="list" data-item="{{item}}">
+        	<text class="con-item-txt line_ellipsis" wx:if="{{schedule.six[index].type==1}}">可约</text>
+    </view>
+ 	</view>
+
+  </view>
+</view>
+
+<view class="tishi">
+    <view>温馨提示：</view>
+    <view>1、预约后，请把预约记录截图发送给客服，并留言上课方式（线上/线下），上课具体时间段，后续客服会答复消息。</view>
+    <view>2、一节课约45分钟，发送具体时间段后，客服会联系老师该时间段是否有其他学生在上课，若冲突，则稍微调整时间。</view>
+    <view>3、为保证课程能如期进行，请至少提前一天预约，避免与其他学生上课时间冲突。</view>
+    <view>4、如有不可抗力因素无法上课，请尽量提前跟客服联系。</view>
+    <view>5、预约后请联系客服交一半课时费用押金，上完课再交剩余一半课时费用。若预约后在上课前未交押金，则取消本次课程并扣除一定的用户信用。</view>
+</view>
+
+<view class="dibufix">
+  <image src="/images/qyicon(1).png" class="dbimg"></image>
+
+	<button class="kefu" open-type="contact">
+		<icon class="iconfont icon-kefu" style="color: rgb(134, 134, 134); width: 120rpx; margin-left: -60rpx;height: 70rpx;"></icon>
+		<view class="kefutext">客服</view>
+	</button>
+	<button class="fenxiang" open-type="share">
+		<icon class="iconfont icon-fenxiang" style="color: rgb(134, 134, 134); width: 120rpx; margin-left: -60rpx;height: 70rpx;"></icon>
+		<view class="fenxiangtext">分享</view>
+	</button>
+
+  <button bindtap="yuyue" class="yuyue" data-id="{{list._id}}">点击预约</button>
+  
+</view>

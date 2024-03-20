@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'iconfontindex';  /* Project id 3169814 */
+  src: url('//at.alicdn.com/t/c/font_3169814_5m7pudewt5m.woff2?t=1660906980210') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3169814_5m7pudewt5m.woff?t=1660906980210') format('woff'),
+       url('//at.alicdn.com/t/c/font_3169814_5m7pudewt5m.ttf?t=1660906980210') format('truetype');
+}
+
+.iconfontindex {
+  font-family: "iconfontindex" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gufengwujianzhongguofenggudaileqipipa_huaban_huaban_huaban_huaban:before {
+  content: "\e642";
+  display: flex;
+  margin-left: 35rpx;
+}
+
+.icon-violin:before {
+  content: "\e602";
+  display: flex;
+  margin-left: 35rpx;
+}
+
+.icon-piano:before {
+  content: "\e600";
+  display: flex;
+  margin-left: 35rpx;
+}
+
+.icon-jita:before {
+  content: "\e601";
+  display: flex;
+  margin-left: 35rpx;
+}
+
+.icon-jiazigu:before {
+  content: "\e651";
+  display: flex;
+  margin-left: 35rpx;
+}
+
+.icon-aoli-guzheng:before {
+  content: "\e626";
+  display: flex;
+  margin-left: 35rpx;
+}
+
+.icon-aoli-erhu:before {
+  content: "\e628";
+  display: flex;
+  margin-left: 35rpx;
+}
+

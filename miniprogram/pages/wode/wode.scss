@@ -1,68 +1,193 @@
 .bg{
 	width: 100%;
-	height: 320rpx;
-	background: #FF674B;
+	height: 450rpx;
+	background-image: linear-gradient(90deg,#73b9ff,#d9f4fd);
 	.img{
-		width: 170rpx;
-		height: 170rpx;
+		width: 150rpx;
+		height: 150rpx;
+		margin-top: 145rpx;
 		border-radius: 120rpx;
-		margin-left: 290rpx;
+		margin-left: 40rpx;
 	}
 	.nickName{
 		display: block;
-		text-align: center;
-		margin-top: 10rpx;
+		margin-top: -120rpx;
+		font-size: 44rpx;
+		margin-left: 220rpx;
 	}
 	.weidenglu{
-		margin-top: 30rpx;
-		width: 360rpx;
-		height: 90rpx;
-		font-size: 37rpx;
-		color: #FF674B;
+		margin-top: -125rpx;
+		width: 320rpx;
+		height: 80rpx;
+		font-size: 44rpx;
+		line-height: 40rpx;
+		white-space: nowrap;
+		margin-left: 140rpx;
+		color:rgb(61, 64, 252);
+	}
+	.wdlafter{
+		background: transparent;
 	}
 }
-.nav4{	
-	.nav4_item{
-		margin-top: 40rpx;
-		icon{
-			font-size: 40rpx;
-			margin-left: 40rpx;
-		}
-		text{
-			margin-left: 20rpx;
-			font-size: 35rpx;
+
+.fuwu{
+	background-color: #fff;
+	margin-top: -120rpx;
+	margin-left: 40rpx;
+	margin-right: 40rpx;
+	border-radius: 30rpx;
+	height: 230rpx;
+	.fuwutext{
+		font-size: 32rpx;
+		font-weight: bold;
+		padding-left: 30rpx;
+		padding-top: 24rpx;
+	}
+	.dingdanbig{
+		position: absolute;
+		width: 100rpx;
+		height: 120rpx;
+		margin-left: 35rpx;
+		margin-top: 20rpx;
+
+		.dingdantxt{
+			font-size: 24rpx;
+			line-height: 30rpx;
+			margin-top: 20rpx;
 		}
 	}
-	.line{
-		border-bottom: 1rpx solid #EEEEEE;
-		margin-left: 50rpx;
-		margin-right: 50rpx;
-		width: 600rpx;
-		margin-top: 40rpx;
+	.gouwuchebig{
+		position: absolute;
+		width: 100rpx;
+		height: 120rpx;
+		margin-left: 210rpx;
+		margin-top: 20rpx;
+
+		.gouwuchetxt{
+			font-size: 22rpx;
+			line-height: 58rpx;
+			padding-left: 8rpx;
+		}
 	}
-	.nav4_bt{
-		
-		.contact{
-			width:100%;
-			font-weight:normal;
-			icon{
-				margin-top: 20rpx;
-				font-size: 40rpx;
-				margin-left: -480rpx;
-			}
-			text{
-				margin-left: 20rpx;
-				font-size: 35rpx;
-			}
-			.line2{
-				margin-bottom: -20rpx;
-				border-bottom: 1px solid #EEEEEE;
-				margin-left: 460rpx;
-				margin-right: -50rpx;
-				width: 600rpx;
-				margin-top: 40rpx;
-			}
+	.guanzhubig{
+		position: absolute;
+		width: 100rpx;
+		height: 114rpx;
+		margin-left: 374rpx;
+		margin-top: 20rpx;
+		padding-top: 6rpx;
+
+		.guanzhutxt{
+			font-size: 22rpx;
+			line-height: 56rpx;
+		}
+	}
+	.yuyuebig{
+		position: absolute;
+		width: 100rpx;
+		height: 114rpx;
+		margin-left: 535rpx;
+		margin-top: 20rpx;
+		padding-top: 6rpx;
+
+		.yuyuetxt{
+			font-size: 22rpx;
+			line-height: 46rpx;
+			padding-left: 2rpx;
+		}
+	}
+}
+
+
+.more{
+	background-color: #fff;
+	margin-top: 40rpx;
+	margin-left: 40rpx;
+	margin-right: 40rpx;
+	border-radius: 30rpx;
+	height: 230rpx;
+	.fuwutext{
+		font-size: 32rpx;
+		font-weight: bold;
+		padding-left: 30rpx;
+		padding-top: 24rpx;
+	}
+	.kefubig{
+		position: absolute;
+		width: 106rpx;
+		height: 122rpx;
+		margin-left: 30rpx;
+		margin-top: 10rpx;
+		padding-left: 10rpx;
+		padding-top: 6rpx;
+		font-weight: normal;
+
+		.kefutxt{
+			font-size: 22rpx;
+			line-height: 24rpx;
+			display: block;
+			white-space: nowrap;
+			overflow-wrap: normal;
 		}
 	}
 
+
+	.wdlafter{
+		background: transparent;
+	}
+
+	.fankuibig{
+		position: absolute;
+		width: 106rpx;
+		height: 122rpx;
+		margin-left: 206rpx;
+		margin-top: 10rpx;
+		padding-top: 6rpx;
+		padding-left: 10rpx;
+		font-weight: normal;
+
+		.fankuitxt{
+			font-size: 22rpx;
+			line-height: 28rpx;
+			display: block;
+			white-space: nowrap;
+		}
+	}
+
+	.gzhbig{
+		position: absolute;
+		width: 100rpx;
+		height: 102rpx;
+		margin-left: 374rpx;
+		margin-top: 10rpx;
+		padding-top: 18rpx;
+
+		.gzhtxt{
+			font-size: 22rpx;
+			line-height: 48rpx;
+			display: block;
+			margin-left: 16rpx;
+		}
+	}
+
+	.guanyubig{
+		position: absolute;
+		width: 100rpx;
+		height: 106rpx;
+		margin-left: 535rpx;
+		margin-top: 10rpx;
+		padding-top: 14rpx;
+
+		.guanyutxt{
+			font-size: 22rpx;
+			line-height: 52rpx;
+			display: block;
+		}
+	}
 }
+
+
+
+
+
+

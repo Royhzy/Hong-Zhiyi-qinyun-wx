@@ -1,2 +1,69 @@
-<!--pages/violinshop/violinshop.wxml-->
-<text>pages/violinshop/violinshop.wxml</text>
+<view class="page">
+	<view class="bottom">
+		<view  class="content">
+			<view bindtap="gopiano" class="wc">
+				<icon class="iconfontindex icon-piano" style="font-size: 66rpx; float: left; line-height: 42rpx; margin-right: 40rpx;"></icon>
+				<view>钢琴</view>
+			</view>
+
+			<view class="wc">
+				<icon class="iconfontindex icon-violin" style="font-size: 66rpx; float: left; line-height: 42rpx; margin-right: 40rpx;"></icon>
+				<view>小提琴</view>
+			</view>
+
+			<view bindtap="goguitar" class="wc">
+				<icon class="iconfontindex icon-jita" style="font-size: 66rpx; float: left; line-height: 42rpx; margin-right: 40rpx;"></icon>
+				<view>吉他</view>
+			</view>
+
+			<view bindtap="goguzheng" class="wc">
+				<icon class="iconfontindex icon-aoli-guzheng" style="font-size: 66rpx; float: left; line-height: 42rpx; margin-right: 40rpx;"></icon>
+				<view>古筝</view>
+			</view>
+
+			<view bindtap="gopipa" class="wc">
+				<icon class="iconfontindex icon-gufengwujianzhongguofenggudaileqipipa_huaban_huaban_huaban_huaban" style="font-size: 66rpx; float: left; line-height: 42rpx; margin-right: 40rpx;"></icon>
+				<view>琵琶</view>
+			</view>
+
+			<view bindtap="goerhu" class="wc">
+				<icon class="iconfontindex icon-aoli-erhu" style="font-size: 66rpx; float: left; line-height: 42rpx; margin-right: 40rpx;"></icon>
+				<view>二胡</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="top {{open ? 'c-stare1' : ''}}" bindtouchstart="start" bindtouchmove="move" bindtouchend="end">
+
+		<view class="header">          <!--左上角图片-->
+			<image src="/image/more.png" bindtap="tap_ch"></image>
+		</view>
+
+		<view class="root">            <!--搜索框、筛选-->
+			<input class="input" placeholder="右滑查看其他乐器" bindinput="getKey" confirm-type="search" bindconfirm="goSearch"></input>
+			<view bindtap="goSearch" class="sousuo">搜索</view>
+		</view>
+
+
+		<view class="mid">
+			<button class="midbtn1" bindtap="selectAll">综合</button>	
+			<button class="midbtn1" bindtap="xiaoliang">销量</button>
+			<button class="midbtn1" bindtap="jiage">价格</button>	
+		</view>
+
+	<scroll-view scroll-y="true" class="bot" bindscrolltolower="touchBottom" style=" 	-webkit-overflow-scrolling: touch; overflow: scroll; height: calc(100vh - 210rpx);"><!--calc动态高度-->
+		<view wx:for="{{list}}" wx:key="index">
+			<view class="item" bindtap="goDetail" data-id="{{item.id}}">
+				<image src="http://www.qinyunbs.com:8090/{{item.inimg_image}}" class="inimg"></image>
+				<text class="title">{{item.title}}</text>
+				<view class="dianpu">店铺：{{item.dianpu}}</view>
+				<view class="xiaoliang">销量：{{item.sale}}</view>
+				<view class="price">¥{{item.price}}</view>
+				<image src="/images/gouwuche.png" class="gwimg" catchtap="addgouwuche" data-item="{{item}}"></image>
+			</view>
+		</view>
+	</scroll-view>
+		
+	</view>
+</view>
+
